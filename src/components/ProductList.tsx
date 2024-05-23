@@ -67,13 +67,11 @@ const ProductList = () => {
         reviews: 2,
         likes: '80'
       },
-      
-    // Add more properties as needed
   ];
 
   return (
-    <div className="bg-gray-100 p-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto h-screen">
+    <div className="bg-gray-100 p-4 m-10 rounded-lg ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto h-screen scroll-smooth">
         {Products.map((Products) => (
           <div key={Products.id} className="bg-white rounded-lg shadow-md p-4 relative">
             <img src={Products.imageUrl} alt="Products" className="w-full h-48 object-cover rounded-lg"  />
