@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+/backend/node_modules
 /node_modules
 /.pnp
 .pnp.js
@@ -34,11 +35,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-
-AUTH0_SECRET='0ff62e74392c47f2851d088e03ddd7ec88e15bf7fdadc3b0c51651de9e99310e'
-AUTH0_BASE_URL='http://localhost:3000'
-AUTH0_ISSUER_BASE_URL='https://dev-22b0iaj24okx2i8s.us.auth0.com'
-AUTH0_CLIENT_ID='uPB3nqHt8a49YJXi9ukuFnmfbj3iTlYM'
-AUTH0_CLIENT_SECRET='Or_JKIeTruzPkM2Wy02cxyNrO5_RldCD8L0cs6Vsv359wdcJcm-QCx8Xfz9UYBDb'
-AUTH0_CALLBACK_URL='http://localhost:3000/api/auth/callback'
+.env.local
