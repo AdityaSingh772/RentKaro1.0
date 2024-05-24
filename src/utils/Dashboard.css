@@ -1,0 +1,22 @@
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .main-content {
+    flex: 1;
+    overflow-x: hidden;
+    padding: 20px;
+  }
+  
+  .welcome {
+    margin-bottom: 20px;
+  }
+  
+  .charts {
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
