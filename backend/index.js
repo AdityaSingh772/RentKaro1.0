@@ -25,5 +25,5 @@ app.use('/',router);
 
 
 app.listen(5000, ()=>{
-    console.log("The app is running at port3000");
+    console.log("The app is running at port 5000");
 })
