@@ -7,7 +7,6 @@ import { UserProvider } from '@auth0/nextjs-auth0/client';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,7 +20,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    return (
     <html lang="en">
       <UserProvider>
         <body className={inter.className}>
