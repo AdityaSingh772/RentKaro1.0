@@ -1,14 +1,38 @@
+"use client"
 import Image from "next/image";
 import Search from "@/components/Search";
 import RentPage from "./rent/page";
+import {useUser} from "@auth0/nextjs-auth0/client"
+import Firstpage from "@/components/Firstpage";
+
+
 
 
 export default function Home() {
-  return (
-    <main>
-        <Search/>
-        <RentPage/>
-        
-    </main>
-  );
+
+  const {user,error,isLoading}=useUser();
+
+ 
+  
+  if(user){
+    return (
+    
+      <main>
+          <Search/>
+          <RentPage/>
+          
+      </main>
+    );
+  }
+  else{
+    return (
+      <main>
+        <Firstpage/>
+      </main>
+    )
+  }
+  
+
 }
+
+

@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-shape-divider-top-1716489011 {
+  @apply absolute top-0 left-0 w-full overflow-hidden;
+  line-height: 0; /* Custom property, not available in Tailwind */
+}
+
+.custom-shape-divider-top-1716489011 svg {
+  @apply relative block;
+  width: calc(150% + 1.3px); /* Custom property, not available in Tailwind */
+  height: 124px; /* Custom property, not available in Tailwind */
+}
+
+.custom-shape-divider-top-1716489011 .shape-fill {
+  fill: #DDE6ED; /* Custom property, not available in Tailwind */
+}

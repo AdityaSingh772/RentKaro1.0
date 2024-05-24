@@ -25,3 +25,15 @@ const config: Config = {
 };
 
 export default config;
+
+module.exports = {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}', // This will capture all your React component files
+    './src/styles/custom.css', // This points to your custom CSS file
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+

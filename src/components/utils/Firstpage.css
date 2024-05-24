@@ -1,0 +1,80 @@
+.custom-shape-divider-top-1716489011 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1716489011 svg {
+    position: relative;
+    display: block;
+    width: calc(150% + 1.3px);
+    height: 124px;
+}
+
+.custom-shape-divider-top-1716489011 .shape-fill {
+    fill: #DDE6ED;
+}
+
+.rentkaro-container {
+    position: relative;
+    display: inline-block;
+}
+  
+  .rentkaro-container:hover .text-effect {
+    transform: translateY(-3px); /* Move the text slightly up */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  }
+  
+  .text-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+  }
+
+  .wrapper{
+    box-sizing: content-box;
+    background-color: #27374D;
+    height: 50px;
+    padding: 50px 30px;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.2);
+}
+.words{
+    overflow: hidden;
+}
+.animate{
+    display: block;
+    height: 100%;
+    padding-left: 10px;
+    color: #0e6ffc;
+    animation: spin_words 3s infinite;
+}
+@keyframes spin_words{
+    10%{
+        transform: translateY(-112%);
+    }
+    25%{
+        transform: translateY(-100%);
+    }
+    35%{
+        transform: translateY(-212%);
+    }
+    50%{
+        transform: translateY(-200%);
+    }
+    60%{
+        transform: translateY(-312%);
+    }
+    75%{
+        transform: translateY(-300%);
+    }
+    85%{
+        transform: translateY(-412%);
+    }
+    100%{
+        transform: translateY(-400%);
+    }
+}
+  
