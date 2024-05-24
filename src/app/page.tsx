@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Search from "@/components/Search";
 import RentPage from "./rent/page";
+import ExtraDetailForm from "@/components/ExtraDetailForm";
 export default function Home() {
   return (
     <main>
-        <Search/>
-        <RentPage/>
+        <ExtraDetailForm/>
+        {/* <Search/>
+        <RentPage/> */}
     </main>
   );
 }

@@ -8,7 +8,7 @@ const ProductList = () => {
       id: 1,
       imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
       price: '5$',
-      address: 'jija , saali or Sex',
+      address: 'Mera beta dinesh',
       seller: 'Jeet',
       reviews: 2,
       likes: '80'
@@ -17,7 +17,7 @@ const ProductList = () => {
         id: 2,
         imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
         price: '5$',
-        address: 'jija , saali or Sex',
+        address: 'Mera beta dinesh',
         seller: 'Jeet',
         reviews: 2,
         likes: '80'
@@ -26,7 +26,7 @@ const ProductList = () => {
         id: 3,
         imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
         price: '5$',
-        address: 'jija , saali or Sex',
+        address: 'Mera beta dinesh',
         seller: 'Jeet',
         reviews: 2,
         likes: '80'
@@ -35,7 +35,7 @@ const ProductList = () => {
         id: 4,
         imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
         price: '5$',
-        address: 'jija , saali or Sex',
+        address: 'Mera beta dinesh',
         seller: 'Jeet',
         reviews: 2,
         likes: '80'
@@ -44,7 +44,7 @@ const ProductList = () => {
         id: 5,
         imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
         price: '5$',
-        address: 'jija , saali or Sex',
+        address: 'Mera beta dinesh',
         seller: 'Jeet',
         reviews: 2,
         likes: '80'
@@ -53,7 +53,7 @@ const ProductList = () => {
         id: 6,
         imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
         price: '5$',
-        address: 'jija , saali or Sex',
+        address: 'Mera beta dinesh',
         seller: 'Jeet',
         reviews: 2,
         likes: '80'
@@ -62,7 +62,7 @@ const ProductList = () => {
         id: 7,
         imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
         price: '5$',
-        address: 'jija , saali or Sex',
+        address: 'Mera beta dinesh',
         seller: 'Jeet',
         reviews: 2,
         likes: '80'
