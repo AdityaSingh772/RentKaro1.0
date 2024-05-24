@@ -1,6 +1,6 @@
 import React from 'react'
 import Search from "@/components/Search";
-import RentPage from "../rent/page";
+import RentPage from "../Rent/page";
 
 function page() {
   return (
