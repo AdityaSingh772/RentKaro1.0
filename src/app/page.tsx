@@ -7,7 +7,8 @@ export default function Home() {
     <main>
         <ExtraDetailForm/>
         {/* <Search/>
-        <RentPage/> */}
+
+<RentPage/> */}
     </main>
   );
 }
