@@ -54,7 +54,7 @@
 
 "use client"
 import React from 'react';
-import './firstpage.css'; // Import the custom CSS file
+import './utils/firstpage.css'; // Import the custom CSS file
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Link from 'next/link';
 
@@ -93,9 +93,9 @@ const Firstpage = () => {
           <div className='wrapper text-2xl'>
           <p>You can either</p>
           <div className='words text-2xl'>
-             <span>BUY</span>
-             <span>SELL</span>
-             <span>RENT</span>
+             <span className="animate">BUY</span>
+             <span className="animate">SELL</span>
+             <span className="animate">RENT</span>
           </div>
           </div>
           
@@ -111,10 +111,23 @@ const Firstpage = () => {
           </Link>
           </button>
         <button className="text-white bg-green-500 hover:bg-green-600 py-4 px-10 rounded-lg ml-4">
-          Signup
+        <Link href="/api/auth/login">
+           Sign up
+          </Link>
           </button>
       </div>
     </div>
+
+    // <div className="flex justify-evenly items-center bg-[#27374D] py-4 h-[300px]">
+    //     <button className="text-white bg-blue-500 hover:bg-blue-600 py-4 px-10 rounded-lg mr-4">
+    //       <Link href="/api/auth/login">
+    //        Login
+    //       </Link>
+    //       </button>
+    //     <button className="text-white bg-green-500 hover:bg-green-600 py-4 px-10 rounded-lg ml-4">
+    //       Signup
+    //       </button>
+    //   </div>
   );
 }
 

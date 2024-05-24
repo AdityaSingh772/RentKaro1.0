@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiHeart } from 'react-icons/fi';
 
+
 const Categories = () => {
   const Catagory = [
     {

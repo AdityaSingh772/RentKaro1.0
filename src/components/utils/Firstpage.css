@@ -44,7 +44,7 @@
 .words{
     overflow: hidden;
 }
-span{
+.animate{
     display: block;
     height: 100%;
     padding-left: 10px;
