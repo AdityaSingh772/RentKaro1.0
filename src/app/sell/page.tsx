@@ -50,7 +50,7 @@ const PostAdForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     const formData = new FormData();
     formData.append('brand', formState.brand);
     formData.append('title', formState.title);
@@ -58,24 +58,28 @@ const PostAdForm: React.FC = () => {
     formData.append('price', formState.price.toString());
     formData.append('college', formState.college);
     formData.append('phone', formState.phone);
-
+  
     formState.photos.forEach(photo => {
       formData.append('photos', photo);
     });
-
+  
     try {
-      const response = await axios.post('http://localhost:5000/productadmin', formData, {
+      const response = await axios.post('http://localhost:5000/api/productadmin', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       });
       console.log('Response:', response.data);
-      // Handle success (e.g., clear the form, show a success message)
+      alert("The ad is sent for review from the admin");
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 2000);
     } catch (error) {
       console.error('Error uploading form:', error);
       // Handle error (e.g., show an error message)
     }
   };
+  
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
