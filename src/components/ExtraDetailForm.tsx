@@ -3,7 +3,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const Form: React.FC = () => {
+const ExtraDetailForm: React.FC = () => {
     const [formData, setFormData] = useState({
         college:"",
         hall:"",
@@ -127,4 +127,4 @@ const Form: React.FC = () => {
     );
 };
 
-export default Form;
+export default ExtraDetailForm;

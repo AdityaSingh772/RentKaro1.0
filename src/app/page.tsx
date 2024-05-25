@@ -4,6 +4,7 @@ import Search from "@/components/Search";
 import RentPage from "./rent/page";
 import {useUser} from "@auth0/nextjs-auth0/client"
 import Firstpage from "@/components/Firstpage";
+import ExtraDetailForm from "@/components/ExtraDetailForm"
 
 
 
@@ -11,6 +12,9 @@ import Firstpage from "@/components/Firstpage";
 export default function Home() {
 
   const {user,error,isLoading}=useUser();
+//   return (
+// <ExtraDetailForm/>
+//   );
 
  
   
