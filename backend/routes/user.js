@@ -1,8 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const {handleSumission} = require('../controllers/user')
+const { handleSumission, getData } = require('../controllers/user');
 
-//http://localhost:5000/submit
-router.post("/submit", handleSumission);
+// GET request to fetch items
+router.get('/items', async (req, res, next) => {
+    try {
+        const response = await getData(req, res);
+        console.log(response); // Log the response data
+    } catch (error) {
+        next(error);
+    }
+});
+
+// POST request to handle form submission
+router.post('/submit', handleSumission);
 
 module.exports = router;

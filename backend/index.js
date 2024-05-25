@@ -17,8 +17,6 @@ then(()=>{
 });
 
 
-
-
 app.use('/',router);
 
 
