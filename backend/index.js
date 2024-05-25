@@ -20,7 +20,6 @@ then(()=>{
 
 
 
-
 //multer config yaha se
 const storage = multer.diskStorage({
     destination: './adImages/',
@@ -83,6 +82,9 @@ const storage = multer.diskStorage({
   
   app.use(express.json());
   app.use('/uploads', express.static('uploads'));
+
+app.use('/',router);
+
 
 
 
