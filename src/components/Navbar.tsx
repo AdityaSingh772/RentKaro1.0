@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 
+
 const Navbar = () => {
 
   const [isvisible, SetIsvisible] = useState(false);
@@ -70,7 +71,8 @@ const Navbar = () => {
           <FiHeart className="w-6 h-6" />
         </button>
         <button className="text-gray-500 hover:text-gray-700">
-          <FiUser className="w-6 h-6" />
+          
+          <Link href="/dashboard"><FiUser className="w-6 h-6" /></Link>
         </button>
       </div>
     </nav>
