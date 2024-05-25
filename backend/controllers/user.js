@@ -1,3 +1,4 @@
+const { default: mongoose } = require("mongoose");
 const User = require("../models/User");
 const Data = require("../models/User")
 
@@ -21,6 +22,7 @@ const handleSumission = async (req, res) => {
 const getData = async (req, res) => {
     try {
       const items = await Data.find();
+      mongoose.set("debug", true);
       res.status(200).json(items);
     } catch (error) {
       console.error("Error fetching items:", error);

@@ -5,12 +5,11 @@ import Catagories from "@/components/Catagories"
 import Footer from '@/components/Footer'
 
 
-
-const RentPage = () => {
+const RentPage = ({data}) => {
   return (
     <div className="container h-screen w-full flex flex-col">
         <Result/>
-        <ProductList/>
+        <ProductList data = {data}/>
         <Catagories/>
         <Footer/>
     </div>

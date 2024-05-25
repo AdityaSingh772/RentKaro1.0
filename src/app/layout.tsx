@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import user from "@/components/useUserCall";
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 import Navbar from "@/components/Navbar";
@@ -23,9 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <UserProvider>
         <body className={inter.className}>
-          {/* <Navbar /> */}
+          {user && <Navbar /> } 
           {children}
-          {/* <Footer /> */}
+          {user && <Footer />}
         </body>
       </UserProvider>
     </html>

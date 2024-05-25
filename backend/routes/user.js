@@ -3,7 +3,7 @@ const router = express.Router();
 const { handleSumission, getData } = require('../controllers/user');
 
 // GET request to fetch items
-router.get('/items', async (req, res, next) => {
+router.get('/api/items', async (req, res, next) => {
     try {
         const response = await getData(req, res);
         console.log(response); // Log the response data

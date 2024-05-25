@@ -58,8 +58,7 @@ const dataSchema = new mongoose.Schema({
   });
   
 
-const Data = mongoose.model("Data", dataSchema);
-
+const Data = mongoose.model("Data", dataSchema); // Make sure "Data" matches your collection name
 const User = mongoose.model("users", userSchema);
 
 module.exports = User;
