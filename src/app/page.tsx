@@ -34,7 +34,11 @@ export default function Home(){
 // <ExtraDetailForm/>
 //   );
 
- 
+  return (
+    <main>
+      <Firstpage/>
+    </main>
+  )
   
   if(user){
     return (
