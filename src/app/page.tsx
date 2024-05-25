@@ -7,6 +7,7 @@ import Firstpage from "@/components/Firstpage";
 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import user from "@/components/useUserCall";
 
 
 
@@ -48,5 +49,4 @@ export default function Home(){
   
 
 }
-
 

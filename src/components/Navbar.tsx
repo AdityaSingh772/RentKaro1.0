@@ -4,18 +4,19 @@ import Link from 'next/link';
 import { FiHeart, FiUser } from 'react-icons/fi';
 import Image from 'next/image';
 import { useState } from 'react';
-
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 const Navbar = () => {
 
   const [isvisible, SetIsvisible] = useState(false);
-
+  const { user } = useUser();
 
   const handleLink = () => {
       SetIsvisible(!isvisible);
   }
 
   return (
+    <> {user && 
     <nav className="bg-white shadow-md p-4 flex items-center justify-between border-y-b2-2 text-black ">
       <div className="flex items-center space-x-8 mx-8">
           <div className="flex ">
@@ -74,6 +75,8 @@ const Navbar = () => {
         </button>
       </div>
     </nav>
+}
+    </>
   );
 };
 
