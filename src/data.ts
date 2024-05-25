@@ -1,4 +1,4 @@
-const ProductList = () => {
+
     const Products = [
       {
         id: 1,
@@ -64,4 +64,3 @@ const ProductList = () => {
           likes: '80'
         },
     ]
-};
