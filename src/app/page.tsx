@@ -12,7 +12,11 @@ export default function Home() {
 
   const {user,error,isLoading}=useUser();
 
- 
+  return (
+    <main>
+      <Firstpage/>
+    </main>
+  )
   
   if(user){
     return (
