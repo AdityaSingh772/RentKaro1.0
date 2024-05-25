@@ -23,9 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <UserProvider>
         <body className={inter.className}>
-          {user && <Navbar /> } 
+          {!user && <Navbar /> } 
           {children}
-          {user && <Footer />}
+          {!user && <Footer />}
         </body>
       </UserProvider>
     </html>
