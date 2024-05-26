@@ -1,7 +1,9 @@
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  mode: 'jit',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -28,24 +30,43 @@ const config: Config = {
 export default config;
 
 module.exports = {
-  // extend: {
-  //   animation: {
-  //     pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-  //   },
-  //   keyframes: {
-  //     pulse: {
-  //       '0%, 100%': { opacity: 1 },
-  //       '50%': { opacity: 0.5 },
-  //     },
-  //   },
-  // },
   content: [
     './src/**/*.{js,ts,jsx,tsx}', // This will capture all your React component files
     './src/styles/custom.css', // This points to your custom CSS file
   ],
+  darkMode: 'false',
+ 
+  
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        aurora: "aurora 60s linear infinite",
+      },
+      backgroundImage: {
+        'gradient-to-right': 'linear-gradient(to right, #2BC0E4 51%, #EAECC6 100%)',
+      },
+      keyframes: {
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
+        },
+      },
+    },
   },
-  plugins: [],
+  plugins: [addVariablesForColors],
+}
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
 }
 
