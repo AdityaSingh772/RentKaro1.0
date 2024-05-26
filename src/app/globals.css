@@ -6,4 +6,12 @@
 *{
     scroll-behavior: smooth;
 }
+.btn {
+    @apply bg-gradient-to-right transition-all duration-500;
+    background-size: 200% auto;
+  }
+  
+  .btn:hover {
+    background-position: right center;
+  }
 

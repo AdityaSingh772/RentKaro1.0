@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <> {user && 
-    <nav className="bg-white shadow-md p-4 flex items-center justify-between border-y-b2-2 text-black ">
+    <nav className="bg-white shadow-md p-4 flex items-center justify-between border-y-b2-2 text-black overflow-x-hidden ">
       <div className="flex items-center space-x-8 mx-8">
           <div className="flex ">
           <button onClick={handleLink}>

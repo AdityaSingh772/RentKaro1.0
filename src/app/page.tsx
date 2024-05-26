@@ -3,7 +3,7 @@ import Image from "next/image";
 import Search from "@/components/Search";
 import RentPage from "./rent/page";
 import {useUser} from "@auth0/nextjs-auth0/client"
-import Firstpage from "@/components/Firstpage";
+import {Firstpage} from "@/components/Firstpage";
 import ExtraDetailForm from "@/components/ExtraDetailForm"
 
 import axios from "axios";
@@ -30,18 +30,23 @@ export default function Home(){
       };
       fetchData();
   } ,[]);
-
-
-
-
-
+  
 //preloader added
-  if (isLoading) return (
-    <div>
-      <Preloader/>
-    </div>
-  );
+if (isLoading) return (
+  <div>
+    <Preloader/>
+  </div>
+);
 //preloader end
+  return (
+    <Firstpage/>
+  )
+
+
+
+
+
+
 
 
   if(user){
