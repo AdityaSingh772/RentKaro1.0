@@ -29,7 +29,7 @@ const adSchema = new mongoose.Schema({
         type:String,
         required : true,
     },
-    college : {
+    phone : {
         type:String,
         required : true,
     },

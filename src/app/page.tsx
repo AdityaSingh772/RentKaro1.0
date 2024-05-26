@@ -17,19 +17,9 @@ export default function Home(){
 
   const {user,error,isLoading}=useUser();
 
-  const [data, setData] = useState([]);
 
-  useEffect(() => {
-      const fetchData = async () =>{
-        try {
-            const response = await axios.get("/api/items");
-            setData(response.data);
-        } catch (error) {
-          console.error("Error fetching data:", error);
-        }
-      };
-      fetchData();
-  } ,[]);
+
+
   
 //preloader added
 if (isLoading) return (
@@ -38,9 +28,9 @@ if (isLoading) return (
   </div>
 );
 //preloader end
-  return (
-    <Firstpage/>
-  )
+  // return (
+  //   <Firstpage/>
+  // )
 
 
 
@@ -54,7 +44,7 @@ if (isLoading) return (
     
       <main>
           <Search/>
-          <RentPage  data={data}/>
+          <RentPage/>
           
       </main>
     );
