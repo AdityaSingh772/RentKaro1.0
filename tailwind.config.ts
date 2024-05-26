@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  mode: 'jit',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -27,6 +28,17 @@ const config: Config = {
 export default config;
 
 module.exports = {
+  // extend: {
+  //   animation: {
+  //     pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+  //   },
+  //   keyframes: {
+  //     pulse: {
+  //       '0%, 100%': { opacity: 1 },
+  //       '50%': { opacity: 0.5 },
+  //     },
+  //   },
+  // },
   content: [
     './src/**/*.{js,ts,jsx,tsx}', // This will capture all your React component files
     './src/styles/custom.css', // This points to your custom CSS file

@@ -1,5 +1,7 @@
 
 # dependencies
+
+
 /backend/node_modules
 /node_modules
 /.pnp
@@ -36,4 +38,5 @@ yarn-error.log*
 next-env.d.ts
 .env.local
 
-package-lock.json
+.env
+/backend/.env
