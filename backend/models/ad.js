@@ -6,9 +6,7 @@ const adSchema = new mongoose.Schema({
     brand:{
         type:String,
         required : true,
-
-        
-    },
+     },
     title : {
         type:String,
         required : true,
@@ -29,7 +27,7 @@ const adSchema = new mongoose.Schema({
         type:String,
         required : true,
     },
-    college : {
+    phone : {
         type:String,
         required : true,
     },

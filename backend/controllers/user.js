@@ -1,6 +1,7 @@
 const { default: mongoose } = require("mongoose");
 const User = require("../models/User");
-const Data = require("../models/User")
+const Data = require("../models/User");
+
 
 
 const handleSumission = async (req, res) => {
