@@ -8,6 +8,7 @@ import ExtraDetailForm from "@/components/ExtraDetailForm"
 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Preloader from "@/components/PreLoader";
 
 
 
@@ -28,11 +29,19 @@ export default function Home(){
         }
       };
       fetchData();
-  } ,[])
+  } ,[]);
 
-//   return (
-// <ExtraDetailForm/>
-//   );
+
+
+
+
+//preloader added
+  if (isLoading) return (
+    <div>
+      <Preloader/>
+    </div>
+  );
+//preloader end
 
 
   if(user){
