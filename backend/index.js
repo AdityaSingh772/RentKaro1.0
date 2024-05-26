@@ -65,7 +65,7 @@ const storage = multer.diskStorage({
               title: req.body.title,
               description: req.body.description,
               price: req.body.price,
-              photos: photoPaths,
+              photo: "http://dummyimage.com/132x100.png/ff4444/ffffff",
               college: req.body.college,
               phone: req.body.phone,
               isReview : "pending"
