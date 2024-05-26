@@ -26,40 +26,10 @@ const userSchema = new mongoose.Schema({
     },
 });
 
-const dataSchema = new mongoose.Schema({
-    id: {
-      type: String,
-      required: true,
-    },
-    image_url: {
-      type: String,
-      required: true,
-    },
-    price: {
-      type: String,
-      required: true,
-    },
-    item: {
-      type: String,
-      required: true,
-    },
-    seller: {
-      type: String,
-      required: true,
-    },
-    review: {
-      type: Number,
-      required: true,
-    },
-    likes: {
-      type: Number,
-      required: true,
-    },
-  });
+
   
 
-const Data = mongoose.model("Data", dataSchema); 
+
 const User = mongoose.model("users", userSchema);
 
 module.exports = User;
-module.exports = Data;
