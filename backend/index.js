@@ -7,6 +7,7 @@ const path = require("path");
 const userRouter = require("./routes/user");
 const Ad = require("./models/ad")
 const app = express();
+const adRouter = require("./routes/ad");
 app.use(cors());
 app.use(express.json());
 
@@ -66,7 +67,8 @@ const storage = multer.diskStorage({
               price: req.body.price,
               photos: photoPaths,
               college: req.body.college,
-              phone: req.body.phone
+              phone: req.body.phone,
+              isReview : "pending"
             });
             const savedAd = await newAd.save();
             res.json(savedAd);
@@ -94,7 +96,8 @@ const storage = multer.diskStorage({
 
 app.use('/',userRouter);
 
-
+//ad ke routes yaha se
+app.use("/", adRouter);
 
 
 app.listen(port, ()=>{
