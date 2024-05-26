@@ -83,7 +83,7 @@ const storage = multer.diskStorage({
   app.use(express.json());
   app.use('/uploads', express.static('uploads'));
 
-app.use('/',router);
+
 
 
 
