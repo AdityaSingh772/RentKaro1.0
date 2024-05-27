@@ -19,12 +19,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className=" overflow-x-hidden">
       <UserProvider>
-        <body className={inter.className}>
-          {/* <Navbar /> */}
-          {children}
-          {/* <Footer /> */}
+        <body className={inter.className} >
+          <div className="min-h-screen flex flex-col justify-between">
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </body>
       </UserProvider>
     </html>
