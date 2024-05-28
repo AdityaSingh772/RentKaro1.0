@@ -44,7 +44,7 @@ if (isLoading) return (
     
       <main>
           <Search/>
-          <RentPage/>
+          {/* <RentPage/> */}
           
       </main>
     );

@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className=" overflow-x-hidden">
+    <html lang="en" className=" overflow-x-hidden bg-neutral-400">
       <UserProvider>
         <body className={inter.className} >
           <div className="min-h-screen flex flex-col justify-between">

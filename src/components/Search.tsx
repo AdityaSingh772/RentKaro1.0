@@ -81,20 +81,20 @@ const Search = () => {
 
 
   return (
-    <div className="bg-white shadow-md p-4 flex items-center justify-between my-1 border-y-2-gray-800">
+    <div className="bg-neutral-700 shadow-md p-4 flex items-center justify-between ">
       <div className="flex items-center space-x-4">
         {/* Location Search Bar */}
         <div className="relative">
           <input
             type="text"
-            placeholder="Search by name..."
-            className="px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-green-500"
+            placeholder="What are you looking for ?"
+            className=" bg-neutral-700 px-4 py-2 border rounded-full hover:border-blue-300 focus:outline-none focus:ring-2 focus:bg-white drop-shadow-2xl"
           />
-          <FiSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+          <FiSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 font-[2rem] text-black hover:text-blue-300" />
         </div>
 
         {/* Price Dropdown */}
-        <div className="relative">
+        {/* <div className="relative">
           <select className="px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
             <option>Any Price</option>
             <option>100-200</option>
@@ -102,10 +102,10 @@ const Search = () => {
             <option>300-400</option>
             <option>400-500</option>
           </select>
-        </div>
+        </div> */}
 
         {/* Beds Dropdown */}
-        <div className="relative">
+        {/* <div className="relative">
           <select className="px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
             <option>for</option>
             <option>Men</option>
@@ -113,32 +113,32 @@ const Search = () => {
             <option>Chake</option>
             <option>Jeet</option>
           </select>
-        </div>
+        </div> */}
 
         {/* Types Dropdown */}
-        <div className="relative">
+        {/* <div className="relative">
           <select className="px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
             <option>Catagories</option>
             <option>House</option>
             <option>Apartment</option>
             <option>Condo</option>
           </select>
-        </div>
+        </div> */}
 
         {/* More Button */}
-        <button className="px-4 py-2 border rounded-full flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+        {/* <button className="px-4 py-2 border rounded-full flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-green-500">
           <FiSliders className="text-gray-500" />
           <span>More</span>
-        </button>
+        </button> */}
       </div>
 
-      {/* Sort By Newest Dropdown */}
+      {/* This section will be used for selecting the college to view */}
+
       <div className="relative">
-        <select className="px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
-          <option>Sort by: Newest</option>
-          <option>Oldest</option>
-          <option>Price: Low to High</option>
-          <option>Price: High to Low</option>
+        <select className="px-4 py-2 border rounded-full focus:outline-none focus:ring-2">
+          <option>--College--</option>
+          <option>NIT Rourkela</option> 
+          
         </select>
       </div>
     </div>
