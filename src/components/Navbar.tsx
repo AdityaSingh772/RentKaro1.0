@@ -80,18 +80,18 @@ const Navbar = () => {
 
 
 
-      <div className="flex font-bold text-white hover:text-neutral-400  items-center space-x-4 mx-8">
+      <div className="flex font-bold text-white  items-center space-x-4 mx-8">
         {user ? (
           <div>
               
-          <button className="mx-[0.75rem]">
+          <button className="mx-[0.75rem]  hover:text-neutral-400">
           <FiHeart className="w-6 h-6" />
         </button>
-        <button className="mx-[0.75rem]">
+        <button className="mx-[0.75rem]  hover:text-neutral-400" >
           
           <Link href="/dashboard"><FiUser className="w-6 h-6" /></Link>
         </button>
-        <button className=" mx-[0.75rem]">
+        <button className=" mx-[0.75rem]  hover:text-neutral-400">
           
           <Link href="/api/auth/logout">Logout</Link>
         </button>
