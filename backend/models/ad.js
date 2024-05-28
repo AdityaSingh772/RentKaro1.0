@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
-
-
 const adSchema = new mongoose.Schema({
     brand:{
         type:String,

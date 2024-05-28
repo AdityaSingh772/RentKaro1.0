@@ -12,6 +12,8 @@ import axios from 'axios'
 const RentPage = () => {
 
   const [data, setData] = useState([]);
+
+  
   useEffect(() => {
     const fetchData = async () =>{
       try {
