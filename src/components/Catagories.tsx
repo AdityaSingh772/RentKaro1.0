@@ -84,7 +84,7 @@ const Categories = () => {
     <div className="bg-gray-100 p-4 mx-10 my-1 rounded-lg h-fit">
       {ListOfitems.map((listItem) => (
         <div key={listItem.id}>
-          <h1 className="text-2xl font-sans font-normal my-2 border-y-2 bg-red-200">{listItem.title}</h1>
+          <h1 className="text-2xl font-sans font-normal my-2 border-y-2 ">{listItem.title}</h1>
           <div className="overflow-x-scroll flex space-x-4 py-4">
             {Catagory.map((product) => (
               <div key={product.id} className="bg-white rounded-lg shadow-md p-4 relative w-72 flex-none">

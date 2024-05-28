@@ -143,6 +143,8 @@ import React from "react";
 import { AuroraBackground } from "./ui/aurora-background";
 import Link from "next/link";
 import { FlipWordsDemo } from "./FlipWordsDemo";
+
+
 export function Firstpage() {
   return (
     <AuroraBackground>
@@ -156,19 +158,22 @@ export function Firstpage() {
         }}
         className="w-screen h-screen relative flex flex-col gap-4 items-center justify-center px-4"
       >
-       
+      
         <FlipWordsDemo/>
         <div className="flex justify-evenly items-center gap-x-[2rem] h-[300px] px-0">
         <button className="btn text-white shadow-md shadow-[#EAECC6] hover:text-black py-4 px-10 rounded-md mr-4">
           <Link href="/api/auth/login">
-            <span className="font-bold">Login</span>
-           
+            <span className="font-bold">user Login</span>
           </Link>
           </button>
-          <button className="btn text-white shadow-md shadow-[#EAECC6] hover:text-black py-4 px-10 rounded-md mr-4">
+          {/* <button className="btn text-white shadow-md shadow-[#EAECC6] hover:text-black py-4 px-10 rounded-md mr-4">
           <Link href="/api/auth/login">
             <span className="font-bold">Signup</span>
-           
+          </Link>
+          </button> */}
+          <button className="btn text-white shadow-md shadow-[#EAECC6] hover:text-black py-4 px-10 rounded-md mr-4">
+          <Link href="/adminDashboard">
+            <span className="font-bold">Admin Login</span>
           </Link>
           </button>
       </div>
