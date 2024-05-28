@@ -1,97 +1,48 @@
 "use client"
-
+import axios from 'axios';
 import { useState } from 'react';
 import { FiSearch, FiSliders } from 'react-icons/fi';
+import RentPage from './RentPage';
 
-
-
-const Products = [
-  {
-    id: 1,
-    imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
-    price: '5$',
-    item: 'book',
-    seller: 'Jeet',
-    reviews: 2,
-    likes: '80'
-  },
-  {
-      id: 2,
-      imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
-      price: '5$',
-      item: 'book-hai',
-      seller: 'Jeet',
-      reviews: 2,
-      likes: '80'
-    },
-    {
-      id: 3,
-      imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
-      price: '5$',
-      item: 'book-thi',
-      seller: 'Jeet',
-      reviews: 2,
-      likes: '80'
-    },
-    {
-      id: 4,
-      imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
-      price: '5$',
-      item: 'book-jii',
-      seller: 'Jeet',
-      reviews: 2,
-      likes: '80'
-    },
-    {
-      id: 5,
-      imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
-      price: '5$',
-      item: 'book-kie',
-      seller: 'Jeet',
-      reviews: 2,
-      likes: '80'
-    },
-    {
-      id: 6,
-      imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
-      price: '5$',
-      item: 'book-hoo',
-      seller: 'Jeet',
-      reviews: 2,
-      likes: '80'
-    },
-    {
-      id: 7,
-      imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
-      price: '5$',
-      item: 'book-uuu',
-      seller: 'Jeet',
-      reviews: 2,
-      likes: '80'
-    },
-]
 
 const Search = () => {
 
   const [query, setQuery] = useState('');
-  const [filteredData, setFilteredData] = useState(Products);
+  const [result, setResult] = useState([]);
+  // const [filteredData, setFilteredData] = useState(Products);
+
+  const handleSearch = async(e: React.ChangeEvent<HTMLFormElement>) => {
+
+    e.preventDefault();
+    try{
+      const response = await axios.get(`http://localhost:5000/api/search?q=${query}`);
+      setResult(response.data);
+      console.log(result);
+    }catch(e){
+      console.log(e);
+    }
 
 
 
-
+  }
 
   return (
+    <div className=''>
     <div className="bg-neutral-700 shadow-md p-4 flex items-center justify-between ">
       <div className="flex items-center space-x-4">
-        {/* Location Search Bar */}
+        <form onSubmit={handleSearch}>
         <div className="relative">
           <input
             type="text"
             placeholder="What are you looking for ?"
+            onChange = {(e) => {setQuery(e.target.value)}}
             className=" bg-neutral-700 px-4 py-2 border rounded-full hover:border-blue-300 focus:outline-none focus:ring-2 focus:bg-white drop-shadow-2xl"
           />
+          <button type='submit'>
           <FiSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 font-[2rem] text-black hover:text-blue-300" />
+          </button>
         </div>
+        </form>
 
         {/* Price Dropdown */}
         {/* <div className="relative">
@@ -141,6 +92,10 @@ const Search = () => {
           
         </select>
       </div>
+    </div>
+    <RentPage
+    searchRes = {result}
+    />
     </div>
   );
 };

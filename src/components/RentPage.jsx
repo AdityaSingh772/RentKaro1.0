@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 
-const RentPage = () => {
+const RentPage = (searchRes) => {
 
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -29,8 +29,8 @@ const RentPage = () => {
     <div className="container h-screen w-full flex flex-col">
         <Result/>
         <ProductList Products = {data}/>
-        <Catagories/>
-        <Footer/>
+        {/* <Catagories/> */}
+        {/* <Footer/> */}
     </div>
   )
 }
