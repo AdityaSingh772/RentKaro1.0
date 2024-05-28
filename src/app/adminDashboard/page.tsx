@@ -51,7 +51,7 @@ const MainLayout: React.FC = () => {
   useEffect(() => {
     const fetchClient= async () => {
       try {
-        const response = await axios.get("http://localhost:5000/admin/client");
+        const response = await axios.get("http://localhost:5000/client");
         setClient(response.data);
         console.log(response.data);
       } catch (error) {

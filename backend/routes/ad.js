@@ -6,6 +6,6 @@ const {getclient} = require('../controllers/client');
 // GET request to fetch items
 router.get('/api/items', getad);
 
-router.get('/admin/client', getclient);
+router.get('/client', getclient);
 
 module.exports = router;

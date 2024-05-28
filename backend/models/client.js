@@ -5,7 +5,6 @@ const clientSchema = new mongoose.Schema({
     id: {
         type: Number,
         required: true,
-        unique: true
       },
       name: {
         type: String,
@@ -14,7 +13,6 @@ const clientSchema = new mongoose.Schema({
       email: {
         type: String,
         required: true,
-        unique: true
       },
       gender: {
         type: String,
