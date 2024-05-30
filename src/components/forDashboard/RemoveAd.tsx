@@ -1,5 +1,6 @@
 import React from 'react';
-import { FiHeart } from 'react-icons/fi';
+import axios from 'axios';
+import {useRouter} from "next/navigation"
 
 interface Product {
   id: number;
@@ -21,53 +22,8 @@ interface ManageProps {
 
 
 const DashboardSection: React.FC<ManageProps>= ({userData}) => {
-  // const products = [
-  //   {
-  //     id: 1,
-  //     imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
-  //     price: '5$',
-  //     item: 'book',
-  //     seller: 'Jeet',
-  //     reviews: 2,
-  //     likes: '80'
-  //   },
-  //   {
-  //     id: 2,
-  //     imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
-  //     price: '5$',
-  //     item: 'book',
-  //     seller: 'Jeet',
-  //     reviews: 2,
-  //     likes: '80'
-  //   },
-  //   {
-  //     id: 3,
-  //     imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
-  //     price: '5$',
-  //     item: 'book',
-  //     seller: 'Jeet',
-  //     reviews: 2,
-  //     likes: '80'
-  //   },
-  //   {
-  //     id: 4,
-  //     imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
-  //     price: '5$',
-  //     item: 'book',
-  //     seller: 'Jeet',
-  //     reviews: 2,
-  //     likes: '80'
-  //   },
-  //   {
-  //     id: 5,
-  //     imageUrl: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
-  //     price: '5$',
-  //     item: 'book',
-  //     seller: 'Jeet',
-  //     reviews: 2,
-  //     likes: '80'
-  //   },
-  // ];
+const router = useRouter();
+
 
   return (
     <div className="bg-black border-2 border-white p-5 rounded-lg text-center flex-1 mx-5 drop-shadow-lg hover:border-blue-500 duration-300">
@@ -95,11 +51,28 @@ const DashboardSection: React.FC<ManageProps>= ({userData}) => {
                 
               </div>
               <div className="mt-4">
-                <h2 className="text-xl font-bold">{product.price}</h2>
-                <p className="text-gray-700">{product.title}</p>
+                <h2 className="text-xl text-white font-bold">{product.price}</h2>
+                <p className="text-white">{product.title}</p>
               </div>
               <div className="mt-2 block text-center">
-               <button className='rounded-full bg-[#FF0000] hover:border-blue-500 hover:text-blue-500 text-white border-2 border-white p-2'>
+               <button
+                className='rounded-full bg-[#FF0000] hover:border-blue-500 hover:text-blue-500 text-white border-2 border-white p-2'
+                onClick={async () => {
+                  try {
+                    const response = await axios.delete('http://localhost:5000/api/delete', {
+                      data: {
+                        id: product.id,
+                        email: product.email
+                      }
+                    });
+                    console.log(response.data.message);
+                    window.location.reload() 
+                    
+                  } catch (error) {
+                    console.error('There was an error deleting the product!', error);
+                  }
+                }}
+                >
                 Delete
                </button>
               </div>
