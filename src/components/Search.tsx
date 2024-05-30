@@ -9,6 +9,8 @@ import { init } from 'next/dist/compiled/webpack/webpack';
 
 interface Product {
   id: number;
+  type:string,
+  email:string;
   brand: string;
   title: string;
   description: string;

@@ -5,6 +5,8 @@ import axios from 'axios';
 
 interface Product {
   id: number;
+  type:string,
+  email:string;
   brand: string;
   title: string;
   description: string;
@@ -63,7 +65,7 @@ const RentPage: React.FC<RentPageProps> = ({ searchRes , college }) => {
     <div className="container h-screen w-full flex flex-col">
       <Result Size={data.length} college={college} />
       {loading ? (
-        <div>Loading...</div>
+        <div className='bg-black text-white'>Loading</div>
       ) : (
         <ProductList Products={data} />
       )}

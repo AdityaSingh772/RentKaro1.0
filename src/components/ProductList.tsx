@@ -3,6 +3,8 @@ import { FiHeart } from 'react-icons/fi';
 
 interface Product {
   id: number;
+  type:string,
+  email:string;
   brand: string;
   title: string;
   description: string;
