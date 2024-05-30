@@ -1,8 +1,12 @@
 "use client"
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react';
 
 interface FormState {
+  type : string;
   brand: string;
   title: string;
   description: string;
@@ -10,10 +14,12 @@ interface FormState {
   photos: File[];
   college: string;
   phone:string;
+  email:string;
 }
 
 const PostAdForm: React.FC = () => {
   const [formState, setFormState] = useState<FormState>({
+    type: '',
     brand: '',
     title: '',
     description: '',
@@ -21,7 +27,16 @@ const PostAdForm: React.FC = () => {
     photos: [],
     college: '',
     phone:'',
+    email:'',
   });
+
+  const {isLoading, user, error} = useUser();
+  const router = useRouter();
+  useEffect( () => {
+    if(!user){
+      router.push("/api/auth/login");
+    }
+  }, [isLoading, user, router]);
 
   const [previewPhotos, setPreviewPhotos] = useState<string[]>([]);
 
@@ -43,7 +58,7 @@ const PostAdForm: React.FC = () => {
       });
 
       // photo dikhane ke liye
-      const previewArray = fileArray.map(file => URL.createObjectURL(file));
+      const previewArray: string[]= fileArray.map(file => URL.createObjectURL(file));
       setPreviewPhotos(previewArray);
     }
   };
@@ -84,6 +99,21 @@ const PostAdForm: React.FC = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white p-8 rounded-lg shadow-md">
+      <div className="mb-4">
+          <label className="block text-gray-700 font-bold mb-2">What type of advertisement do you want ?*</label>
+          <select
+            name="type"
+            value={formState.college}
+            onChange={handleChange}
+            required
+            className="w-full px-3 py-2 border rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="">--Select--</option>
+            <option value="nitr">NIT Rourkela</option>
+            <option value="mit">MIT</option>
+            
+          </select>
+        </div>
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2">Brand*</label>
           <input
