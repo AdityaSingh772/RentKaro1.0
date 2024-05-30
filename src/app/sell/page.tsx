@@ -4,7 +4,8 @@ import axios from 'axios';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react';
-
+import Preloader from '@/components/PreLoader';
+import Link from 'next/link';
 interface FormState {
   type : string;
   brand: string;
@@ -29,16 +30,22 @@ const PostAdForm: React.FC = () => {
     phone:'',
     email:'',
   });
+  const [previewPhotos, setPreviewPhotos] = useState<string[]>([]);
 
   const {isLoading, user, error} = useUser();
   const router = useRouter();
-  useEffect( () => {
-    if(!user){
-      router.push("/api/auth/login");
+  const email = user ? user.email || '' : '';
+  useEffect(() => {
+    if (!user &&!isLoading) {
+      router.push("/defaultPage");
     }
-  }, [isLoading, user, router]);
+  }, [user, isLoading, router]);
 
-  const [previewPhotos, setPreviewPhotos] = useState<string[]>([]);
+
+  if (isLoading) return <div><Preloader/></div>;
+  if (error) return <div>Error: {error.message}</div>;
+
+ 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -67,11 +74,13 @@ const PostAdForm: React.FC = () => {
     e.preventDefault();
   
     const formData = new FormData();
+    formData.append('type', formState.type);
     formData.append('brand', formState.brand);
     formData.append('title', formState.title);
     formData.append('description', formState.description);
     formData.append('price', formState.price.toString());
     formData.append('college', formState.college);
+    formData.append('email',email)
     formData.append('phone', formState.phone);
   
     formState.photos.forEach(photo => {
@@ -96,21 +105,21 @@ const PostAdForm: React.FC = () => {
   };
   
 
-  return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white p-8 rounded-lg shadow-md">
+  return (user?(
+    <div className="flex justify-center items-center min-h-screen bg-black">
+      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-black border-2 py-[1.5rem] border-white p-8 rounded-lg shadow-md">
       <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2">What type of advertisement do you want ?*</label>
           <select
             name="type"
-            value={formState.college}
+            value={formState.type}
             onChange={handleChange}
             required
             className="w-full px-3 py-2 border rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="">--Select--</option>
-            <option value="nitr">NIT Rourkela</option>
-            <option value="mit">MIT</option>
+            <option value="rent">Rent</option>
+            <option value="sell">Sell</option>
             
           </select>
         </div>
@@ -210,7 +219,7 @@ const PostAdForm: React.FC = () => {
         </div>
       </form>
     </div>
-  );
+  ):null);
 };
 
 export default PostAdForm;

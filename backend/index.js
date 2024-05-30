@@ -5,7 +5,7 @@ const multer = require('multer');
 const cors = require('cors');
 const path = require("path");
 const userRouter = require("./routes/user");
-const Ad = require("./models/ad")
+const Ad = require("./models/ad");
 const app = express();
 const adRouter = require("./routes/ad");
 app.use(cors());
@@ -50,7 +50,8 @@ const storage = multer.diskStorage({
       cb('Error: Images Only!');
     }
   }
-  app.post('/api/productadmin', (req, res) => {
+  
+  app.post('/api/productadmin', async (req, res) => {
     upload(req, res, async (err) => {
       if (err) {
         res.status(400).json({ message: err });
@@ -60,8 +61,12 @@ const storage = multer.diskStorage({
         } else {
           try {
             const photoPaths = req.files.map(file => file.path);
+            const id =await Ad.countDocuments() + 1;
             const newAd = new Ad({
+              id : id,
               brand: req.body.brand,
+              type: req.body.type,
+              email: req.body.email,
               title: req.body.title,
               description: req.body.description,
               price: req.body.price,
