@@ -99,7 +99,7 @@ const Navbar = () => {
         ):(
           
         
-        <button className="">
+        <button className=" mx-[0.75rem]  hover:text-neutral-400">
           
           <Link href="/api/auth/login">Login</Link>
         </button>

@@ -23,6 +23,22 @@ const RentPage: React.FC<RentPageProps> = ({ searchRes , college }) => {
   const [data, setData] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get<Product[]>("http://localhost:5000/api/items");
+        setData(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData()
+  }, []);
+
+
   useEffect(() => {
     const fetchData = async () => {
       try {
