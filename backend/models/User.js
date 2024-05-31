@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
-const { type } = require("os");
-const { emitWarning } = require("process");
-const { ModuleResolutionKind } = require("typescript");
+
 
 const userSchema = new mongoose.Schema({
     college:{

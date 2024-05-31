@@ -6,12 +6,12 @@ const SingleProductPage = () => {
     const SingleProducts = [
         {
             id:1,
-            first_name:"Vinamrata Chonkhar",
-            email:"adityakivinn@gmail.com",
-            contact_no:"9029001787",
-            Hostel_name:"CVR",
-            product_name:"Condoms",
-            desc:"Reusable condoms wash it after use and no pregnancy guarantee bus jor se matt krna ",
+            first_name:"ewfew",
+            email:"fef",
+            contact_no:"9994951651",
+            Hostel_name:"ef",
+            product_name:"efwef",
+            desc:"wefewfewf efwfwef efwefwefewf wefwef ",
             price:"$10"
         }]
 

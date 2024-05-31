@@ -1,10 +1,22 @@
 const mongoose = require("mongoose");
 
 const adSchema = new mongoose.Schema({
+    id:{
+        type:Number,
+    },
     brand:{
         type:String,
         required : true,
      },
+     type:{
+        type:String,
+        required : true,
+     },
+     email : {
+        type:String,
+        required : true,
+    },
+
     title : {
         type:String,
         required : true,
