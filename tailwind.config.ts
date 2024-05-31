@@ -12,10 +12,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        b1: "#27374d",
-        b2: "#526D82",
-        b3: "#9DB2BF",
-        b4: "#DDE6ED",
+        b1: "#0F044C",
+        b2: "#141E61",
+        b3: "#787A91",
+        b4: "#EEEEEE",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -46,7 +46,7 @@ const Search: React.FC = () => {
 
   return (
     <div>
-      <div className="bg-neutral-700 shadow-md p-4 flex items-center justify-between">
+      <div className=" bg-gray-800 shadow-black p-4 flex items-center justify-start gap-6">
         <div className="flex items-center space-x-4">
           <form onSubmit={handleSearch}>
             <div className="relative">
@@ -55,7 +55,7 @@ const Search: React.FC = () => {
                 placeholder="What are you looking for?"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="bg-neutral-700 px-4 py-2 border rounded-full hover:border-blue-300 focus:outline-none focus:ring-2 focus:bg-white drop-shadow-2xl"
+                className="bg-gray-700 px-4 py-2 border rounded-full hover:border-blue-300 focus:outline-none focus:ring-2 focus:bg-white drop-shadow-2xl"
               />
               <button type="submit">
                 <FiSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-2xl text-black hover:text-blue-300" />
@@ -68,7 +68,7 @@ const Search: React.FC = () => {
           <select
             value={college}
             onChange={(e) => setCollege(e.target.value)}
-            className="px-4 py-2 border rounded-full focus:outline-none focus:ring-2"
+            className="px-4 py-2 border rounded-full focus:outline-none focus:ring-2 bg-gray-700"
           >
             <option value="">--College--</option>
             <option value="nitr">NIT Rourkela</option>

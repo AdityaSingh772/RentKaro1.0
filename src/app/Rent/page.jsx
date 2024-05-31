@@ -28,7 +28,7 @@ const RentPage = () => {
 } ,[]);
 
   return (
-    <div className="container h-screen w-full flex flex-col">
+    <div className="container h-fit w-full flex flex-col bg-gray-300">
         <Result/>
         <ProductList Products = {data}/>
         <Catagories/>

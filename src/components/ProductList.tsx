@@ -3,8 +3,8 @@ import { FiHeart } from 'react-icons/fi';
 
 interface Product {
   id: number;
-  type:string,
-  email:string;
+  type: string;
+  email: string;
   brand: string;
   title: string;
   description: string;
@@ -20,11 +20,11 @@ interface ProductListProps {
 
 const ProductList: React.FC<ProductListProps> = ({ Products }) => {
   return (
-    <div className="bg-gray-100 p-4 m-10 rounded-lg">
+    <div className="bg-gray-100 p-4 m-10 rounded-lg overflow-y-auto hifit">
       {Products.length === 0 ? (
         <div className="text-center text-gray-700">Sorry, no results found</div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto h-fit scroll-smooth">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {Products.map((product) => (
             <div key={product.id} className="bg-white rounded-lg shadow-md p-4 relative">
               <img src={product.photo} alt={product.title} className="w-full h-48 object-cover rounded-lg" />
