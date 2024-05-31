@@ -1,41 +1,51 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState, useEffect } from 'react';
 
-const images = [
-  '/image1.jpg',
-  '/image2.jpg',
-  '/image3.jpg',
-  '/image4.jpg'
-];
+// const images = [
+//   '/random1.jpg',
+//   '/random2.jpg',
+//   '/random3.jpg',
+//   '/random4.jpg'
+// ];
 
-const ProductCarousel = () => {
+const ProductCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handlePrev = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleNext = () => {
     const isLastSlide = currentIndex === images.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    const newIndex = isLastSlide? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
 
-  return (
-  <div className="flex  h-[25rem] p-9 w-full">
+  useEffect(() => {
+    if (!isHovered) {
+      const interval = setInterval(() => {
+        handleNext();
+      }, 3000); // Change image every 3 seconds
+      return () => clearInterval(interval);
+    }
+  }, [currentIndex, isHovered]);
 
-  
-    <div className="relative w-full h-full flex items-center justify-center bg-fuchsia-400">
-    <button onClick={handlePrev} className="absolute left-0 bg-gray-500 text-white p-2 rounded z-10">Prev</button>
-    <div className="w-full h-full flex items-center justify-center">
-      <img src={images[currentIndex]} alt={`Product Image ${currentIndex + 1}`} className="object-cover max-w-full max-h-full" />
+  return (
+    <div className="flex h-[35rem] p-9 w-1/2">
+      <div 
+        className="relative w-full h-full flex items-center justify-center bg-pink-100 rounded-lg overflow-hidden shadow-lg"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className="w-full h-full flex items-center justify-center">
+          <img 
+            src={images[currentIndex]} 
+            alt={`Product Image ${currentIndex + 1}`} 
+            className="object-cover w-full h-full transition-opacity duration-1000" 
+          />
+        </div>
+        <div className="absolute inset-0 bg-white opacity-10"></div>
+      </div>
     </div>
-    <button onClick={handleNext} className="absolute right-0 bg-gray-500 text-white p-2 rounded z-10">Next</button>
-  </div>
-  </div>
   );
 };
 
 export default ProductCarousel;
+

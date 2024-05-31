@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -20,6 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className=" overflow-x-hidden">
+     
       <UserProvider>
         <body className={inter.className} >
           <div className="min-h-screen flex flex-col justify-between">
@@ -31,6 +33,7 @@ export default function RootLayout({
           </div>
         </body>
       </UserProvider>
+    
     </html>
   );
 }

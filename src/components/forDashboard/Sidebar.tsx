@@ -1,12 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-
+import { useUser } from '@auth0/nextjs-auth0/client';
 const Sidebar: React.FC = () => {
+  const {user,error,isLoading}=useUser();
   return (
     <div className="sidebar w-64 bg-white p-5 border-r border-gray-300">
       <div className="profile text-center mb-8"> {/* Increased margin-bottom */}
         <img src="https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="Aditya" className="profile-img w-16 rounded-full mx-auto" />
-        <h2 className="text-lg font-bold mt-2">aditya</h2> {/* Added margin-top */}
+        <h2 className="text-lg font-bold mt-2">{user?user.name: 'Guest'}</h2> {/* Added margin-top */}
       </div>
       <nav>
         <ul>
@@ -26,7 +27,11 @@ const Sidebar: React.FC = () => {
       </nav>
       <div className="upgrade text-center mt-8"> {/* Increased margin-top */}
         <p className='text-[0.75rem] mb-3'>wanna sell/rent?</p> {/* Increased margin-bottom */}
-        <button className="px-4 py-2 bg-blue-600 text-white rounded cursor-pointer">Post your ad</button>
+        <button className="px-4 py-2 bg-blue-600 text-white rounded cursor-pointer ">Post your ad</button>
+        <Link href="/demand">
+        <button className="px-4 py-2 bg-blue-600 text-white rounded cursor-pointer mt-6">Demand</button>
+        </Link>
+        
       </div>
     </div>
   );
