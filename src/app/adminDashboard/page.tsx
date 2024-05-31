@@ -1,4 +1,3 @@
-// src/components/for adminDashboard/MainLayout.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -9,16 +8,13 @@ import Header from "@/components/for adminDashboard/Header";
 import OrdersAdmin from "@/components/for adminDashboard/Orders";
 import RegisteredClient from "@/components/for adminDashboard/RegisteredClient";
 import RegisteredCollege from "@/components/for adminDashboard/RegisteredCollege";
-import { Product , User} from "@/components/for adminDashboard/invoice";
-
-
-
+import { Product, User } from "@/components/for adminDashboard/invoice";
 
 const MainLayout: React.FC = () => {
   const [activeComponent, setActiveComponent] = useState<string>("InvoiceList");
   const [data, setData] = useState<Product[]>([]);
-  const [client, setClient ] = useState<User[]>([]);
-
+  const [client, setClient] = useState<User[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   const renderComponent = () => {
     switch (activeComponent) {
@@ -27,7 +23,7 @@ const MainLayout: React.FC = () => {
       case "OrdersAdmin":
         return <OrdersAdmin products={data} />;
       case "RegisteredClient":
-        return <RegisteredClient user={client}/>;
+        return <RegisteredClient user={client} />;
       case "RegisteredCollege":
         return <RegisteredCollege />;
       default:
@@ -40,22 +36,21 @@ const MainLayout: React.FC = () => {
       try {
         const response = await axios.get("http://localhost:5000/api/items");
         setData(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
+        setError("Error fetching data");
       }
     };
     fetchData();
   }, []);
 
   useEffect(() => {
-    const fetchClient= async () => {
+    const fetchClient = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/client");
+        const response = await axios.get("http://localhost:5000/adminDashboard");
         setClient(response.data);
-        console.log(response.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching client data:", error);
       }
     };
     fetchClient();
@@ -66,7 +61,9 @@ const MainLayout: React.FC = () => {
       <Sidebar setActiveComponent={setActiveComponent} />
       <div className="flex-1 flex flex-col ml-64">
         <Header />
-        <main className="flex-1 p-6">{renderComponent()}</main>
+        <main className="flex-1 p-6">
+          {error ? <div className="text-red-500">{error}</div> : renderComponent()}
+        </main>
       </div>
     </div>
   );
