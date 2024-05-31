@@ -5,7 +5,7 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react';
 import Preloader from '@/components/PreLoader';
-import Link from 'next/link';
+
 interface FormState {
   type : string;
   brand: string;
@@ -36,7 +36,7 @@ const PostAdForm: React.FC = () => {
   const router = useRouter();
   const email = user ? user.email || '' : '';
   useEffect(() => {
-    if (!user &&!isLoading) {
+    if (!user && !isLoading) {
       router.push("/defaultPage");
     }
   }, [user, isLoading, router]);
@@ -107,9 +107,9 @@ const PostAdForm: React.FC = () => {
 
   return (user?(
     <div className="flex justify-center items-center min-h-screen bg-black">
-      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-black border-2 py-[1.5rem] border-white p-8 rounded-lg shadow-md">
+      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-black border-2 py-[1.5rem] border-blue-500 p-8 rounded-lg shadow-md">
       <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">What type of advertisement do you want ?*</label>
+          <label className="block text-blue-500 font-bold mb-2">What type of advertisement do you want ?*</label>
           <select
             name="type"
             value={formState.type}
@@ -124,7 +124,7 @@ const PostAdForm: React.FC = () => {
           </select>
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Brand*</label>
+          <label className="block text-blue-500 font-bold mb-2">Brand*</label>
           <input
             type="text"
             name="brand"
@@ -136,7 +136,7 @@ const PostAdForm: React.FC = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Ad Title*</label>
+          <label className="block text-blue-500 font-bold mb-2">Ad Title*</label>
           <input
             type="text"
             name="title"
@@ -148,7 +148,7 @@ const PostAdForm: React.FC = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Description*</label>
+          <label className="block text-blue-500 font-bold mb-2">Description*</label>
           <textarea
             name="description"
             value={formState.description}
@@ -159,7 +159,7 @@ const PostAdForm: React.FC = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Price*</label>
+          <label className="block text-blue-500 font-bold mb-2">Price*</label>
           <input
             type="number"
             name="price"
@@ -170,7 +170,7 @@ const PostAdForm: React.FC = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Upload Photos (up to 5)*</label>
+          <label className="block text-blue-500 font-bold mb-2">Upload Photos (up to 5)*</label>
           <input
             type="file"
             name="photos"
@@ -187,7 +187,7 @@ const PostAdForm: React.FC = () => {
           </div>
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Select the college you want your ad to display*</label>
+          <label className="block text-blue-500 font-bold mb-2">Select the college you want your ad to display*</label>
           <select
             name="college"
             value={formState.college}
@@ -202,7 +202,7 @@ const PostAdForm: React.FC = () => {
           </select>
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Phone no.*</label>
+          <label className="block text-blue-500 font-bold mb-2">Phone no.*</label>
           <input
             type="text"
             name="phone"
@@ -213,7 +213,7 @@ const PostAdForm: React.FC = () => {
           />
         </div>
         <div>
-          <button type="submit" className="w-full px-4 py-2 bg-blue-500 text-white font-bold rounded shadow hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button type="submit" className=" block w-full px-4 py-2 hover:bg-white border-2 border-blue-500 hover:border-white bg-black text-white hover:text-black rounded-full  shadow-md hover:shadow-lg">
             Post Now
           </button>
         </div>

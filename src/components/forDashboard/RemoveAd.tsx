@@ -37,7 +37,7 @@ const router = useRouter();
       </div>
       
       
-      <h3 className="text-lg font-bold mb-4">Your Products</h3>
+      <h3 className="text-lg font-bold text-white mb-4">Your Products</h3>
       <div className="overflow-x-auto">
         <div className="flex space-x-4">
           {userData?.map(product => (
@@ -66,7 +66,7 @@ const router = useRouter();
                       }
                     });
                     console.log(response.data.message);
-                    window.location.reload() 
+                    window.location.reload(); 
                     
                   } catch (error) {
                     console.error('There was an error deleting the product!', error);

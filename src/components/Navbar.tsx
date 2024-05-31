@@ -35,7 +35,7 @@ const Navbar = () => {
         
         <div className="text-2xl font-bold ">
           <Link href="/">
-          <span className="bg-gradient-to-r font-bold from-[#2BC0E4] drop-shadow-lg to-[#EAECC6] inline-block text-transparent bg-clip-text">RentKaro</span>
+          <span className="bg-gradient-to-r font-bold from-blue-500 drop-shadow-lg to-[#EAECC6] inline-block text-transparent bg-clip-text">RentKaro</span>
           </Link>
         </div>
       </div>
@@ -48,7 +48,7 @@ const Navbar = () => {
         <Link href="/buy" className="px-4 py-2  hover:bg-white hover:text-black  rounded-full ">
           Buy
         </Link>
-        <Link href="/rent" className="px-4 py-2   hover:bg-white hover:text-black   rounded-full">
+        <Link href="/sell" className="px-4 py-2   hover:bg-white hover:text-black   rounded-full">
           Rent
         </Link>
         <Link href="/sell" className="px-4 py-2   hover:bg-white hover:text-black   rounded-full">
@@ -63,13 +63,13 @@ const Navbar = () => {
 
           {/* // this is important property can be use in future too */}
           <div className={`${isvisible ? 'hidden' : 'flex space-x-4 border-2 border-neutral-400 shadow-md rounded-full '}`} >
-          <Link href="/Contact" className="px-4 py-2 hover:bg-white hover:text-black rounded-full ">
+          <Link href="/contact" className="px-4 py-2 hover:bg-white hover:text-black rounded-full ">
           Contact Us
         </Link>
-        <Link href="/About" className="px-4 py-2 hover:bg-white hover:text-black  rounded-full">
+        <Link href="/about" className="px-4 py-2 hover:bg-white hover:text-black  rounded-full">
           About
         </Link>
-        <Link href="/Our-Team" className="px-4 py-2  hover:bg-white hover:text-black  rounded-full">
+        <Link href="/team" className="px-4 py-2  hover:bg-white hover:text-black  rounded-full">
           Our-Team
         </Link>
         <Link href="" className="px-4 py-2   hover:bg-white hover:text-black  rounded-full animate-bounce" onClick={handleLink}>
@@ -84,14 +84,14 @@ const Navbar = () => {
         {user ? (
           <div>
               
-          <button className="mx-[0.75rem]  hover:text-neutral-400">
+          <button className="mx-[0.75rem]  hover:text-blue-500">
           <FiHeart className="w-6 h-6" />
         </button>
-        <button className="mx-[0.75rem]  hover:text-neutral-400" >
+        <button className="mx-[0.75rem]  hover:text-blue-500" >
           
           <Link href="/dashboard"><FiUser className="w-6 h-6" /></Link>
         </button>
-        <button className=" mx-[0.75rem]  hover:text-neutral-400">
+        <button className=" mx-[0.75rem]  hover:text-blue-500">
           
           <Link href="/api/auth/logout">Logout</Link>
         </button>
@@ -99,7 +99,7 @@ const Navbar = () => {
         ):(
           
         
-        <button className=" mx-[0.75rem]  hover:text-neutral-400">
+        <button className=" mx-[0.75rem]  hover:text-blue-500">
           
           <Link href="/api/auth/login">Login</Link>
         </button>

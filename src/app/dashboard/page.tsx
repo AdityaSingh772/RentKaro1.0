@@ -30,10 +30,11 @@ const Dashboard: React.FC = () => {
 
 
   useEffect( () => {
-    if(!user){
-      router.push("/");
+    if(!user && !isLoading){
+      router.push("/defaultPage");
     }
   }, [isLoading, user, router]);
+  
   const email = user ? user.email || '' : '';
 
   const [result, setResult] = useState<Product[]>([]);

@@ -1,9 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import { useUser } from '@auth0/nextjs-auth0/client';
+import Image from 'next/image';
 
 const Sidebar: React.FC = () => {
   const {user, isLoading, error} = useUser();
+  
+  if(isLoading){
+    return (
+      <div>loading</div>
+    );
+  }
   console.log(user);
   const n = user?.name || ''
   const url = user ? user.picture || '' : '';
@@ -13,7 +20,8 @@ const Sidebar: React.FC = () => {
         user &&
         <div className="profile text-center mb-8"> {/* Increased margin-bottom */}
         <img
-         src={url} alt="Aditya" className="profile-img w-16 rounded-full mx-auto border-2 border-white hover:border-black drop-shadow-xl" />
+         src={url} alt="Aditya" className="profile-img w-16 rounded-full mx-auto border-2 border-white hover:border-blue-500 drop-shadow-xl" 
+         />
         <h2 className="text-lg font-bold mt-2 drop-shadow-lg text-white">{n}</h2> {/* Added margin-top */}
       </div>
       }
