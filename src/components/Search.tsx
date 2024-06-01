@@ -5,7 +5,7 @@ import axios from 'axios';
 import { FiSearch } from 'react-icons/fi';
 import RentPage from './RentPage';
 import { useEffect } from 'react';
-import { init } from 'next/dist/compiled/webpack/webpack';
+
 
 interface Product {
   id: number;
