@@ -27,16 +27,17 @@ export default function Home() {
 
   if (user) {
     return (
+    
       <main>
           <Search/>
-          <RentPage/>
+          {/* <RentPage/> */}
           
       </main>
     );
   } else {
     return (
       <main>
-        <Firstpage />
+        <Firstpage/>
       </main>
     );
   }

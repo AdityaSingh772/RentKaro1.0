@@ -107,7 +107,7 @@ const PostAdForm: React.FC = () => {
 
   return (user?(
     <div className="flex justify-center items-center min-h-screen bg-black">
-      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-black border-2 py-[1.5rem] border-blue-500 p-8 rounded-lg shadow-md">
+      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-black border-2 py-[1.5rem] mt-[7rem] mb-[3rem] border-blue-500 p-8 rounded-lg shadow-md">
       <div className="mb-4">
           <label className="block text-blue-500 font-bold mb-2">What type of advertisement do you want ?*</label>
           <select

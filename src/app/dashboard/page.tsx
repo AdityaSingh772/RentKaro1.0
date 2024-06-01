@@ -63,7 +63,7 @@ const Dashboard: React.FC = () => {
 
   return (
     user ? (
-      <div className="flex bg-black">
+      <div className="flex bg-black mt-[4.75rem]">
         <Sidebar />
         <div className="main-content flex-1 overflow-hidden">
           <div className="welcome mb-4">

@@ -59,13 +59,15 @@ const RentPage: React.FC<RentPageProps> = ({ searchRes, college }) => {
   }, [searchRes]);
 
   return (
-    <div className="container h-screen w-full flex flex-col bg-gradient-to-b from-gray-100 to-gray-500 my-1">
+    <div className="container h-screen w-full flex flex-col">
       <Result Size={data.length} college={college} />
       {loading ? (
-        <div className="bg-black text-white">Loading</div>
+        <div className='bg-black text-white'>Loading</div>
       ) : (
         <ProductList Products={data} />
       )}
+      {/* <Catagories /> */}
+      {/* <Footer /> */}
     </div>
   );
 };
