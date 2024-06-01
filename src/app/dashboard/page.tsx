@@ -1,6 +1,7 @@
-"use client";
-import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+"use client"
+import { useState } from 'react';
+import { useRouter } from 'next/navigation'
+import React, { useEffect } from 'react';
 import Sidebar from '@/components/forDashboard/Sidebar';
 import Stats from '@/components/forDashboard/Stats';
 import RemoveAd from '@/components/forDashboard/RemoveAd';
@@ -8,58 +9,73 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import Preloader from '@/components/PreLoader';
 import axios from 'axios';
 
+import '@/utils/Dashboard.css';
+
+interface Product {
+  id: number;
+  type:string,
+  email:string;
+  brand: string;
+  title: string;
+  description: string;
+  price: string;
+  photo: string;
+  college: string;
+  phone: string;
+}
+
 const Dashboard: React.FC = () => {
   const { user, error, isLoading } = useUser();
   const router = useRouter();
 
-  // Redirect to the homepage if user is not logged in
-  useEffect(() => {
-    if (!isLoading && !user) {
-      router.push("/");
+
+  useEffect( () => {
+    if(!user && !isLoading){
+      router.push("/defaultPage");
     }
   }, [isLoading, user, router]);
+  
+  const email = user ? user.email || '' : '';
 
-  // State for storing user data
-  const [userData, setUserData] = useState<Product[]>([]);
+  const [result, setResult] = useState<Product[]>([]);
 
-  // Fetch user data from the API
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        if (user) {
-          const response = await axios.get(`http://localhost:5000/api/dashboard`, {
-            params: {
-              email: user.email || ''
-            }
-          });
-          setUserData(response.data);
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`http://localhost:5000/api/dashboard`, {
+        params: {
+          email: email
         }
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      }
-    };
-    fetchData();
-  }, [user]);
+      });
+      setResult(response.data);
+    } catch (error) {
+      console.error("Error fetching search results:", error);
+    }
+  };
+  fetchData()
+}, [user]);
 
-  // Loading indicator while fetching user data
-  if (isLoading) return <Preloader />;
-
-  // Display error message if there's an error
+  if (isLoading) return <div><Preloader/></div>;
   if (error) return <div>Error: {error.message}</div>;
 
+  
+
   return (
-    <div className="flex bg-black">
-      <Sidebar />
-      <div className="main-content flex-1 overflow-hidden">
-        <div className="welcome mb-4">
-          <h1 className='font-bold text-[1.5rem] text-white'>{user?.name}</h1>
-        </div>
-        <Stats userData={userData} />
-        <div className="charts">
-          <RemoveAd userData={userData} />
+    user ? (
+      <div className="flex bg-black mt-[4.75rem]">
+        <Sidebar />
+        <div className="main-content flex-1 overflow-hidden">
+          <div className="welcome mb-4">
+            <h1 className='font-bold text-[1.5rem] text-white'>{user.name}</h1>
+          </div>
+          <Stats userData = {result} />
+          <div className="charts">
+            <RemoveAd userData = {result}/>
+          </div>
         </div>
       </div>
-    </div>
+    ) : null
   );
 };
 

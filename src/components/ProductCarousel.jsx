@@ -28,7 +28,7 @@ const ProductCarousel = ({ images }) => {
   }, [currentIndex, isHovered]);
 
   return (
-    <div className="flex h-[35rem] p-9 w-1/2">
+    <div className="flex h-[35rem] p-9 w-1/2 mt-7">
       <div 
         className="relative w-full h-full flex items-center justify-center bg-pink-100 rounded-lg overflow-hidden shadow-lg"
         onMouseEnter={() => setIsHovered(true)}

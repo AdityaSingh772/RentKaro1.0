@@ -9,8 +9,8 @@ const Preloader = () => {
             <div className="animate-pulse">
             <FidgetSpinner
               visible={true}
-              height="80"
-              width="80"
+              height="50"
+              width="50"
               ariaLabel="fidget-spinner-loading"
               wrapperStyle={{}}
               wrapperClass="fidget-spinner-wrapper"

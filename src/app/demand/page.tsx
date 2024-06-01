@@ -27,16 +27,22 @@ const Demandpage: React.FC = () => {
     try {
       const demand = await axios.post('http://localhost:5000/api/demand', DemandState);
       alert("The demand is sent for review from the admin");
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 2000);
+
+
+
     } catch (error) {
       console.log('Error uploading the form:', error);
     }
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white p-8 rounded-lg shadow-md">
+    <div className="flex justify-center items-center min-h-screen bg-black mt-9">
+      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-black border-2 py-[1.5rem] mt-[7rem] mb-[3rem] border-blue-500 p-8 rounded-lg shadow-md">
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Product Name</label>
+          <label className="block text-blue-500 font-bold mb-2">Product Name</label>
           <input
             type="text"
             name="productname"
@@ -47,7 +53,7 @@ const Demandpage: React.FC = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Demand</label>
+          <label className="block text-blue-500 font-bold mb-2">Demand</label>
           <input
             type="text"
             name="demand"
@@ -59,7 +65,7 @@ const Demandpage: React.FC = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Description</label>
+          <label className="block text-blue-500 font-bold mb-2">Description</label>
           <textarea
             name="description"
             value={DemandState.description}
@@ -69,7 +75,7 @@ const Demandpage: React.FC = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Duration</label>
+          <label className="block text-blue-500 font-bold mb-2">Duration</label>
           <input
             type="number"
             name="duration"
@@ -83,7 +89,7 @@ const Demandpage: React.FC = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Return Date</label>
+          <label className="block text-blue-500 font-bold mb-2">Return Date</label>
           <input
             type="date"
             name="returnDate"
@@ -94,7 +100,7 @@ const Demandpage: React.FC = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Price</label>
+          <label className="block text-blue-500 font-bold mb-2">Price</label>
           <input
             type="number"
             name="price"

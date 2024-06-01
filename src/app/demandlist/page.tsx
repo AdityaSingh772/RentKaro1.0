@@ -77,8 +77,10 @@ const DemandList: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4">
-      <h1 className="text-3xl font-bold text-center mb-8">Demand List</h1>
+    <div className="min-h-screen bg-gray-900 py-8 px-4 mt-8">
+<h1 className="text-3xl font-bold text-center mt-7 mb-8 text-white relative">
+  <span className="border-b-4 border-blue-500 mb-4">Demand List</span>
+</h1>
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {demandData.map(demand => (
@@ -94,6 +96,7 @@ const DemandList: React.FC = () => {
       </div>
     </div>
   );
+  
 };
 
 export default DemandList;

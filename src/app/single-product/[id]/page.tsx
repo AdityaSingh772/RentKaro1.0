@@ -52,6 +52,7 @@ const SingleProductPage = ({ params }: { params: { id: string } }) => {
     }, [id]);
   
     return (
+
       <>
         <div className="flex h-full">
           <div className="w-1/2 flex items-center justify-center">
@@ -63,14 +64,13 @@ const SingleProductPage = ({ params }: { params: { id: string } }) => {
               <Singlepage 
                 Product={data.Product[0]}
                 Id={id}
-             
+                
               />
             )}
         </div>
       </>
+
+
     );
   };
-  
-
-
-export default SingleProductPage;
+  export default SingleProductPage;

@@ -132,10 +132,10 @@ const Singlepage: React.FC<SinglepageProps> = ({ Product, Id }) => {
   };
 
   return (
-    <div className="w-1/2 bg-fuchsia-100 flex flex-col items-center justify-center p-8 shadow-lg">
+    <div className="w-1/2 bg-fuchsia-100 flex flex-col items-center justify-center p-8 shadow-lg mt-8">
       <div key={Product.id} className="w-full max-w-2xl flex flex-col gap-8 bg-white p-6 rounded-lg transition duration-300 transform hover:scale-105">
         <div className="text-center">
-          <h1 className="font-extrabold text-4xl ">{Product.title}</h1>
+          <h1 className="font-extrabold text-4xl mt-8">{Product.title}</h1>
           <span className="block mt-2 text-xl text-green-600">Price: ${Product.price}</span>
         </div>
         <p className="mt-4 text-gray-700 text-lg leading-relaxed">{Product.description}</p>
@@ -144,7 +144,7 @@ const Singlepage: React.FC<SinglepageProps> = ({ Product, Id }) => {
             <img src="/cart.png" alt="Cart Icon" height={15} width={30} />
             <button
               type="button"
-              className="py-2 px-6 text-sm border-b-4 font-bold from-[#2BC0E4] to-[#EAECC6] drop-shadow-lg inline-block text-transparent bg-clip-text bg-gradient-to-r rounded-lg shadow-md hover:bg-gradient-to-l hover:scale-105 transition duration-300 ease-in-out"
+              className="py-2 px-6 text-sm bg-gray-900 border-b-4 font-bold from-[#2BC0E4] to-[#EAECC6] drop-shadow-lg inline-block text-transparent bg-clip-text bg-gradient-to-r rounded-lg shadow-md hover:bg-gradient-to-l hover:scale-105 transition duration-300 ease-in-out"
               onClick={handleAddToWishlist}
             >
               Add to WishList
