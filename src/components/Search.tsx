@@ -58,7 +58,7 @@ const Search: React.FC = () => {
                 className="bg-neutral-700 px-4 py-2 border rounded-full hover:border-blue-300 focus:outline-none focus:ring-2 focus:bg-white drop-shadow-2xl"
               />
               <button type="submit">
-                <FiSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-2xl text-black hover:text-blue-300" />
+                <FiSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-2xl text-black hover:text-blue-500" />
               </button>
             </div>
           </form>

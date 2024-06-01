@@ -22,13 +22,13 @@ export function Firstpage() {
        
         <FlipWordsDemo/>
         <div className="flex justify-evenly items-center gap-x-[2rem] h-[300px] px-0">
-        <button className="btn text-white shadow-md shadow-[#EAECC6] hover:text-black py-4 px-10 rounded-md mr-4">
+        <button className=" block w-full px-10 border-b-2 border-blue-500 py-5 hover:bg-white bg-black text-white hover:text-blue-500 rounded-full  shadow-md hover:shadow-lg">
           <Link href="/api/auth/login">
             <span className="font-bold">Login</span>
            
           </Link>
           </button>
-          <button className="btn text-white shadow-md shadow-[#EAECC6] hover:text-black py-4 px-10 rounded-md mr-4">
+          <button className=" block w-full px-9 border-b-2 border-blue-500 py-5 hover:bg-white bg-black text-white hover:text-blue-500 rounded-full  shadow-md hover:shadow-lg">
           <Link href="/api/auth/login">
             <span className="font-bold">Signup</span>
            
