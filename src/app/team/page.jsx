@@ -24,7 +24,7 @@ const teamMembers = [
 
 const OurTeam = () => {
   return (
-    <div className="bg-black min-h-screen flex flex-col items-center text-white pb-[2rem]">
+    <div className="bg-black mt-[5rem] min-h-screen flex flex-col items-center text-white pb-[2rem]">
       <h1 className="text-blue-500 text-4xl font-bold my-8">Our Team</h1>
       <div className="flex flex-col items-center space-y-8 px-4 sm:px-8 lg:px-16">
         {teamMembers.map((member, index) => (

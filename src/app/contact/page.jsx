@@ -39,7 +39,7 @@ const App = () => {
 
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black">
+    <div className=" mt-[3rem] flex items-center justify-center min-h-screen bg-black">
       <div className="p-8 max-w-md w-full border border-blue-500 rounded-lg shadow-lg">
         <h2 className="text-2xl font-semibold text-center text-white mb-6">Contact Us</h2>
         <form onSubmit={handleSubmit} className="space-y-4">

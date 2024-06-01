@@ -12,7 +12,7 @@ export function FlipWordsDemo() {
         
       </div>
       <div className="text-4xl mx-auto font-normal text-neutral-400 dark:text-neutral-400">
-      with <span className="bg-gradient-to-r font-bold from-[#2BC0E4] drop-shadow-lg to-[#EAECC6] inline-block text-transparent bg-clip-text">RentKaro</span>
+      with <span className="bg-gradient-to-r font-bold from-blue-700 drop-shadow-lg to-[#EAECC6] inline-block text-transparent bg-clip-text">RentKaro</span>
       </div>
     </div>
   );

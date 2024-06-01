@@ -17,7 +17,7 @@ const SingleProductPage = () => {
 
     return (
         <>
-            <div className="flex h-full">
+            <div className="flex h-full mt-[4.75rem]">
                 <div className="w-1/2 flex items-center justify-center ">
                     <ProductCarousel />
                 </div>

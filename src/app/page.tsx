@@ -42,16 +42,16 @@ if (isLoading) return (
   if(user){
     return (
     
-      <main>
+      <main className="mt-[4.75rem]">
           <Search/>
-          {/* <RentPage/> */}
+         
           
       </main>
     );
   }
   else{
     return (
-      <main>
+      <main className="mt-[4.5rem]">
         <Firstpage/>
       </main>
     )
