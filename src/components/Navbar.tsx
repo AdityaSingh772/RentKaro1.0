@@ -22,6 +22,7 @@ const Navbar = () => {
   const handleLink = () => {
       SetIsvisible(!isvisible);
   }
+  const refBuy = (user && isLoading)?"/":"/api/auth/login";
 
   return (
     <>
@@ -45,7 +46,7 @@ const Navbar = () => {
           
         
           <div className={`${!isvisible ? 'hidden' : 'flex space-x-4 border-2 border-neutral-400 shadow-md rounded-full '}`} >
-        <Link href="/api/auth/login" className="px-4 py-2  hover:bg-white hover:text-black  rounded-full ">
+        <Link href={refBuy} className="px-4 py-2  hover:bg-white hover:text-black  rounded-full ">
           Buy
         </Link>
         <Link href="/sell" className="px-4 py-2   hover:bg-white hover:text-black   rounded-full">

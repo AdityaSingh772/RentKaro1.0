@@ -5,7 +5,7 @@ const teamMembers = [
   {
     name: "Aditya Singh",
     position: "Co Founder",
-    image: "",
+    image: "/adi.jpg",
     description: "Aditya is the visionary behind our company, bringing years of experience in the tech industry.",
   },
   {
@@ -35,8 +35,8 @@ const OurTeam = () => {
             <Image
               src={member.image}
               alt={member.name}
-              width={32}
-              height={32}
+              width={500}
+              height={500}
               className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover mb-4 md:mb-0 md:mr-8 hover:scale-105 transform transition-transform duration-300"
             />
             <div className="text-center md:text-left">
