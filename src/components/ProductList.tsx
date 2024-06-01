@@ -25,7 +25,7 @@ return (
     {Products.length === 0 ? (
       <div className="text-center text-white">Sorry, no results found</div>
     ) : (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-y-auto h-fit scroll-smooth">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 overflow-y-auto h-fit scroll-smooth">
         {Products.map((product) => (
           <div key={product.id} className="bg-gray-800 rounded-lg shadow-md p-4 relative hover:bg-gray-700 transition duration-300">
             <img src={product.photo} alt={product.title} className="w-full h-48 object-cover rounded-lg" />
