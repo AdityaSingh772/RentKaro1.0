@@ -1,7 +1,7 @@
 const Demand=require('../models/demand');
 
 const handleDemand=async(req,res)=>{
-    const {productname,demand,description,duration,returnDate,isreview}=req.body;
+    const {productname,demand,description,duration,returnDate,isreview,price}=req.body;
    try{
     const dem=await  Demand.create({
         productname,
@@ -9,7 +9,8 @@ const handleDemand=async(req,res)=>{
         description,
         duration,
         returnDate,
-        isreview
+        isreview,
+        price
     })
     res.status(201).json({ message: 'Form data received successfully' });
     

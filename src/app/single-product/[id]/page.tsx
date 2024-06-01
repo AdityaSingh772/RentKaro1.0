@@ -4,6 +4,19 @@ import ProductCarousel from '@/components/ProductCarousel';
 import Singlepage from '@/components/Singlepage';
 import axios from 'axios';
 
+// const SingleProductPage = () => 
+    // const SingleProducts = [
+    //     {
+    //         id:1,
+    //         first_name:"ewfew",
+    //         email:"fef",
+    //         contact_no:"9994951651",
+    //         Hostel_name:"ef",
+    //         product_name:"efwef",
+    //         desc:"wefewfewf efwfwef efwefwefewf wefwef ",
+    //         price:"$10"
+    //     }]
+
 
 interface ProductData {
   id: number;
@@ -50,6 +63,7 @@ const SingleProductPage = ({ params }: { params: { id: string } }) => {
               <Singlepage 
                 Product={data.Product[0]}
                 Id={id}
+             
               />
             )}
         </div>
@@ -57,6 +71,6 @@ const SingleProductPage = ({ params }: { params: { id: string } }) => {
     );
   };
   
-  
+
 
 export default SingleProductPage;

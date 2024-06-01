@@ -107,13 +107,12 @@ interface ProductData {
   phone: string;
 }
 
-interface MyCProps {
+interface SinglepageProps {
   Product: ProductData;
   Id: string;
-  updateWishlistCount: () => void;
 }
 
-const Singlepage: React.FC<MyCProps> = ({ Product, Id, updateWishlistCount }) => {
+const Singlepage: React.FC<SinglepageProps> = ({ Product, Id }) => {
   const handleAddToWishlist = () => {
     const cartItem = {
       id: Product.id,
@@ -125,7 +124,11 @@ const Singlepage: React.FC<MyCProps> = ({ Product, Id, updateWishlistCount }) =>
     const existingCart = JSON.parse(localStorage.getItem('cartItems') || '[]');
     existingCart.push(cartItem);
     localStorage.setItem('cartItems', JSON.stringify(existingCart));
-    updateWishlistCount();
+
+    // Update the wishlist count in localStorage
+    const storedCartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+    const wishlistCount = storedCartItems.length;
+    localStorage.setItem('wishlistCount', wishlistCount.toString());
   };
 
   return (
@@ -181,3 +184,4 @@ const Singlepage: React.FC<MyCProps> = ({ Product, Id, updateWishlistCount }) =>
 };
 
 export default Singlepage;
+

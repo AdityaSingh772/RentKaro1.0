@@ -27,6 +27,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "tailwindcss.d.ts"
-, "src/components/withPageAuthRequired.js"  ],
+, "src/components/withPageAuthRequired.js", "src/app/defaultPage/page.jsx"  ],
   "exclude": ["node_modules"]
 }
