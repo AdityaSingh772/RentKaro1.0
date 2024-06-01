@@ -47,7 +47,7 @@ const MainLayout: React.FC = () => {
   useEffect(() => {
     const fetchClient = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/adminDashboard");
+        const response = await axios.get("http://localhost:5000/api/clients");
         setClient(response.data);
       } catch (error) {
         console.error("Error fetching client data:", error);

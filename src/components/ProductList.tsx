@@ -20,7 +20,7 @@ interface ProductListProps {
 
 const ProductList: React.FC<ProductListProps> = ({ Products }) => {
   return (
-    <div className="bg-gray-100 p-4 m-10 rounded-lg overflow-y-auto hifit">
+    <div className="bg-gradient-to-b from-gray-100 to-gray-300 p-4 m-10 rounded-lg overflow-y-auto hifit">
       {Products.length === 0 ? (
         <div className="text-center text-gray-700">Sorry, no results found</div>
       ) : (

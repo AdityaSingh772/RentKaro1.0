@@ -10,7 +10,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ setActiveComponent }) => {
   return (
-    <div className="w-64 bg-gradient-to-b from-blue-500 to-blue-800 text-white overflow-auto pt-4 pb-6 h-screen fixed md:flex md:flex-col shadow-lg">
+    <div className="w-64 bg-gradient-to-b from-gray-500 to-gray-800 text-white overflow-auto pt-4 pb-6 h-screen fixed md:flex md:flex-col shadow-lg">
       <div className="flex items-center justify-center mb-6">
         <Image src="/seller1.jpg" height={150} width={150} alt='' />
       </div>

@@ -61,7 +61,7 @@ const Navbar = () => {
         <Link href="/about" className="px-4 py-2 hover:bg-white hover:text-black  rounded-full">
           About
         </Link>
-        <Link href="/our-Team" className="px-4 py-2  hover:bg-white hover:text-black  rounded-full">
+        <Link href="/ourTeam" className="px-4 py-2  hover:bg-white hover:text-black  rounded-full">
           Our-Team
         </Link>
         <Link href="" className="px-4 py-2   hover:bg-white hover:text-black  rounded-full animate-bounce" onClick={handleLink}>

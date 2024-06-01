@@ -12,5 +12,5 @@ const getclient = async(req, res) => {
 }
 
 module.exports={
-    getclient,
+    getclient
 }
