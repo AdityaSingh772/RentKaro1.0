@@ -17,7 +17,7 @@ const teamMembers = [
   {
     name: "Jeet Chandak",
     position: "Co Founder",
-    image: "",
+    image: "/jeet.jpg",
     description: "Apna decription likho",
   },
 ];
