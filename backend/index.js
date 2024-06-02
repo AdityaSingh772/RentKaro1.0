@@ -9,6 +9,8 @@ const Ad = require("./models/ad");
 const app = express();
 const adRouter = require("./routes/ad");
 
+const demandRouter=require("./routes/demand")
+
 app.use(cors());
 app.use(express.json());
 
@@ -101,6 +103,16 @@ app.use('/', userRouter);
 // ad ke routes yaha se
 app.use("/", adRouter);
 
+
 app.listen(port, () => {
   console.log(`The app is running at port ${port}`);
 });
+
+//demand ke routes yaha se
+app.use("/",demandRouter);
+
+
+app.listen(port, ()=>{
+    console.log(`The app is running at port ${port}`);
+})
+
