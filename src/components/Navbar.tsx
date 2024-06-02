@@ -94,7 +94,7 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            <button className="mx-[0.75rem] hover:text-blue-500">
+            <button className=" mr-[4.5rem] hover:text-blue-500">
               <Link href="/api/auth/login">Login</Link>
             </button>
           )}

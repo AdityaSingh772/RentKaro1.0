@@ -4,6 +4,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FiHeart, FiCheckCircle } from 'react-icons/fi';
+import { HiOutlineShoppingCart } from "react-icons/hi";
 
 interface Product {
   id: number;
@@ -76,7 +77,7 @@ return (
                       handleWishlistToggle(product);
                     }}
                   >
-                    {wishlist.includes(product.id) ? <FiCheckCircle /> : <FiHeart />}
+                    {wishlist.includes(product.id) ? <FiCheckCircle /> : <HiOutlineShoppingCart />}
                   </button>
             </div>
             <div className="mt-4 flex justify-between">
