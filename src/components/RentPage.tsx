@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Result from '@/components/Result';
 import ProductList from '@/components/ProductList';
 import axios from 'axios';
+import Categories from './Catagories';
+import Footer from './Footer';
 
 interface Product {
   id: number;
@@ -66,8 +68,7 @@ const RentPage: React.FC<RentPageProps> = ({ searchRes, college }) => {
       ) : (
         <ProductList Products={data} />
       )}
-      {/* <Catagories /> */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

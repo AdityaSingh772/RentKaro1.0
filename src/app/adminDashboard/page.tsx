@@ -22,8 +22,8 @@ const MainLayout: React.FC = () => {
 
   const renderComponent = () => {
     switch (activeComponent) {
-      case "InvoiceList":
-        return <InvoiceList />;
+      // case "InvoiceList":
+      //   return <InvoiceList />;
       case "OrdersAdmin":
         return <OrdersAdmin products={data} />;
       case "OnthewayOrders":
@@ -33,7 +33,7 @@ const MainLayout: React.FC = () => {
       case "RegisteredCollege":
         return <RegisteredCollege  />;
       default:
-        return <InvoiceList />;
+        return <OrdersAdmin products={data}/>;
     }
   };
 

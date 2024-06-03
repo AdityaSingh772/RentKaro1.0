@@ -33,15 +33,15 @@ const ProductList: React.FC<ProductListProps> = ({ Products }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto h-fit scroll-smooth">
           {Products.map((product) => (
             <div key={product.id} className="bg-white rounded-lg shadow-md p-4 relative">
-              <img src={product.photo} alt={product.title} className="w-full h-48 object-cover rounded-lg" />
+              <img src={product.photo} alt={product.title} className="w-full h-96 object-contain rounded-lg" />
               <div className="absolute top-4 right-4">
                 <button className="bg-white p-2 rounded-full shadow-md hover:shadow-lg focus:outline-none">
                   <FiHeart className="text-red-500" />
                 </button>
               </div>
               <div className="mt-4 flex justify-between">
-                <button className="bg-b1 text-white py-2 px-4 rounded-full shadow-md hover:bg-b3">Rent</button>
-                <button className="bg-b2 text-white py-2 px-4 rounded-full shadow-md hover:bg-b4">Buy</button>
+                <button className="bg-b1 text-gray-800 py-2 px-4 rounded-full shadow-md hover:bg-b3">Rent</button>
+                <button className="bg-b2 text-gray-800 py-2 px-4 rounded-full shadow-md hover:bg-b4">Buy</button>
               </div>
               <div className="mt-4">
                 <h2 className="text-xl font-bold">{product.price}</h2>
