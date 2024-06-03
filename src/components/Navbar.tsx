@@ -1,85 +1,40 @@
-"use client";
+"use client"
+
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-
-import { FiHeart, FiUser } from 'react-icons/fi';
-import Image from 'next/image';
-import { useState } from 'react';
-import { useUser} from "@auth0/nextjs-auth0/client";
-
 import { FiHeart, FiUser, FiMenu, FiX } from 'react-icons/fi';
-import { useState, useEffect } from 'react';
-import { useUser } from "@auth0/nextjs-auth0/client";
-
+import { TbNotebook } from 'react-icons/tb';
+import { IoIosLogOut } from 'react-icons/io';
+import { HiOutlineShoppingCart } from 'react-icons/hi';
+import { useUser } from '@auth0/nextjs-auth0/client';
 import Preloader from './PreLoader';
-import { TbNotebook } from "react-icons/tb";
-import { IoIosLogOut } from "react-icons/io";
-import { HiOutlineShoppingCart } from "react-icons/hi";
-
-
-
 
 const Navbar = () => {
-
-
   const [isVisible, setIsVisible] = useState(false);
-  const { user, isLoading, error } = useUser();
   const [wishlistCount, setWishlistCount] = useState<number>(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { user, isLoading, error } = useUser();
 
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
     setWishlistCount(storedCartItems.length);
   }, []);
 
-
-  const [isvisible, SetIsvisible] = useState(false);
-  const { user, isLoading, error } = useUser();
-  if (isLoading) return(
-    <Preloader/>
-  )
-  if (error) return <div>{error.message}</div>;
-
   const handleLink = () => {
-
-      SetIsvisible(!isvisible);
-  }
-
-  return (
-    <>
-    <nav className="bg-black text-white p-4 flex items-center justify-between border-b-2 overflow-x-hidden ">
-      <div className="flex items-center space-x-8 mx-8">
-          <div className="flex ">
-          {/* <button onClick={handleLink}>
-          <Image src="/menu.png" height={30} width={30} alt="Menu" />
-          </button> */}
-        </div>
-        
-        <div className="text-2xl font-bold ">
-          <Link href="/">
-          <span className="bg-gradient-to-r font-bold from-blue-500 drop-shadow-lg to-[#EAECC6] inline-block text-transparent bg-clip-text">RentKaro</span>
-          </Link>
-        </div>
-      </div>
-      <div className="flex space-x-4">
-        
-
-          
-        
-          <div className={`${!isvisible ? 'hidden' : 'flex space-x-4 border-2 border-neutral-400 shadow-md rounded-full '}`} >
-        <Link href="/buy" className="px-4 py-2  hover:bg-white hover:text-black  rounded-full ">
-
     setIsVisible(!isVisible);
   };
-
-  const refBuy = user ? "/" : "/api/auth/login";
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  if (isLoading) return <Preloader />;
+  if (error) return <div>{error.message}</div>;
+
   return (
     <>
-      <nav className="bg-black text-white shadow-lg shadow-black p-4 flex items-center justify-between border-b-2 fixed w-full top-0 z-50 ">
+      <nav className="bg-black text-white p-4 flex items-center justify-between border-b-2 overflow-x-hidden">
         <div className="flex items-center space-x-8 mx-8">
           <div className="flex lg:hidden">
             <button onClick={toggleMobileMenu}>
@@ -94,7 +49,7 @@ const Navbar = () => {
         </div>
         <div className="hidden lg:flex space-x-4">
           <div className={`${!isVisible ? 'hidden' : 'flex space-x-4 border-2 border-neutral-400 shadow-md rounded-full'}`}>
-            <Link href={refBuy} className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
+            <Link href="/" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
               Buy
             </Link>
             <Link href="/rent" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
@@ -124,22 +79,22 @@ const Navbar = () => {
         </div>
         <div className="flex font-bold text-white items-center space-x-2">
           {user ? (
-            <div className='grid grid-rows-1'>
+            <div className="grid grid-rows-1">
               <button className="row-start-1 mx-[0.75rem] hover:text-blue-500">
-              <Link href="/cart"><HiOutlineShoppingCart className="w-6 h-6" /></Link>
+                <Link href="/cart"><HiOutlineShoppingCart className="w-6 h-6" /></Link>
               </button>
               <Link href="/demandlist" className="row-start-1 mx-[0.75rem] hover:text-blue-500">
-                <TbNotebook className="w-6 h-6"/>
+                <TbNotebook className="w-6 h-6" />
               </Link>
               <button className="row-start-1 mx-[0.75rem] hover:text-blue-500">
                 <Link href="/dashboard"><FiUser className="w-6 h-6" /></Link>
               </button>
               <button className="row-start-1 mx-[0.75rem] hover:text-blue-500">
-                <Link href="/api/auth/logout"><IoIosLogOut className="w-6 h-6"/></Link>
+                <Link href="/api/auth/logout"><IoIosLogOut className="w-6 h-6" /></Link>
               </button>
             </div>
           ) : (
-            <button className=" mr-[4.5rem] hover:text-blue-500">
+            <button className="mr-[4.5rem] hover:text-blue-500">
               <Link href="/api/auth/login">Login</Link>
             </button>
           )}
@@ -150,74 +105,19 @@ const Navbar = () => {
         <button onClick={toggleMobileMenu} className="self-end">
           <FiX className="w-6 h-6" />
         </button>
-        <Link href={refBuy} className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
-
+        <Link href="/" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
           Buy
         </Link>
-        <Link href="/sell" className="px-4 py-2   hover:bg-white hover:text-black   rounded-full">
+        <Link href="/sell" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
           Rent
         </Link>
-        <Link href="/sell" className="px-4 py-2   hover:bg-white hover:text-black   rounded-full">
+        <Link href="/sell" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
           Sell
         </Link>
-        <Link href="" className="px-4 py-2   hover:bg-white hover:text-black   rounded-full animate-bounce" onClick={handleLink} >
-            more
-        </Link>
-          </div>
-
-        
-
-          {/* // this is important property can be use in future too */}
-          <div className={`${isvisible ? 'hidden' : 'flex space-x-4 border-2 border-neutral-400 shadow-md rounded-full '}`} >
-          <Link href="/contact" className="px-4 py-2 hover:bg-white hover:text-black rounded-full ">
-          Contact Us
-        </Link>
-        <Link href="/about" className="px-4 py-2 hover:bg-white hover:text-black  rounded-full">
-          About
-        </Link>
-
-        <Link href="/team" className="px-4 py-2  hover:bg-white hover:text-black  rounded-full">
-          Our-Team
-
-        <Link href="/team" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
-          Our Team
-
-        </Link>
-        <Link href="" className="px-4 py-2   hover:bg-white hover:text-black  rounded-full animate-bounce" onClick={handleLink}>
+        <Link href="" className="px-4 py-2 hover:bg-white hover:text-black rounded-full animate-bounce" onClick={handleLink} >
           more
         </Link>
-          </div>
       </div>
-
-
-
-      <div className="flex font-bold text-white  items-center space-x-4 mx-8">
-        {user ? (
-          <div>
-              
-          <button className="mx-[0.75rem]  hover:text-blue-500">
-          <FiHeart className="w-6 h-6" />
-        </button>
-        <button className="mx-[0.75rem]  hover:text-blue-500" >
-          
-          <Link href="/dashboard"><FiUser className="w-6 h-6" /></Link>
-        </button>
-        <button className=" mx-[0.75rem]  hover:text-blue-500">
-          
-          <Link href="/api/auth/logout">Logout</Link>
-        </button>
-        </div>
-        ):(
-          
-        
-        <button className=" mx-[0.75rem]  hover:text-blue-500">
-          
-          <Link href="/api/auth/login">Login</Link>
-        </button>
-        )}
-      </div>
-    </nav>
-
     </>
   );
 };

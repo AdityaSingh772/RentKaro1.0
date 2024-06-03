@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -8,13 +8,17 @@ import Header from "@/components/for adminDashboard/Header";
 import OrdersAdmin from "@/components/for adminDashboard/Orders";
 import RegisteredClient from "@/components/for adminDashboard/RegisteredClient";
 import RegisteredCollege from "@/components/for adminDashboard/RegisteredCollege";
-import { Product, User } from "@/components/for adminDashboard/invoice";
+import { Order, Product, User } from "@/components/for adminDashboard/invoice";
+import OnthewayOrders from "@/components/for adminDashboard/OnthewayOrders";
+
 
 const MainLayout: React.FC = () => {
   const [activeComponent, setActiveComponent] = useState<string>("InvoiceList");
   const [data, setData] = useState<Product[]>([]);
   const [client, setClient] = useState<User[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [order, setOrder] = useState<Order[]>([]);
+
 
   const renderComponent = () => {
     switch (activeComponent) {
@@ -22,10 +26,12 @@ const MainLayout: React.FC = () => {
         return <InvoiceList />;
       case "OrdersAdmin":
         return <OrdersAdmin products={data} />;
+      case "OnthewayOrders":
+        return <OnthewayOrders orders = {order}/>
       case "RegisteredClient":
         return <RegisteredClient user={client} />;
       case "RegisteredCollege":
-        return <RegisteredCollege />;
+        return <RegisteredCollege  />;
       default:
         return <InvoiceList />;
     }
@@ -56,6 +62,20 @@ const MainLayout: React.FC = () => {
     fetchClient();
   }, []);
 
+
+  useEffect(()=>{
+        const fetchOrders = async() => {
+          try {
+            const response = await axios.get("http://localhost:5000/api/demand");
+            setOrder(response.data);
+          } catch (error) {
+            console.error("Error fetching order :", error);
+          }
+        };
+        fetchOrders();
+  }, [])
+
+  
   return (
     <div className="flex h-screen bg-gray-100">
       <Sidebar setActiveComponent={setActiveComponent} />

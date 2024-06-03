@@ -1,7 +1,11 @@
 const mongoose=require('mongoose')
-const { describe } = require('node:test')
+const { describe } = require('node:test');
+const { type } = require('os');
 
 const demandSchema=new mongoose.Schema({
+    id:{
+        type : Number,
+    },
     productname:{
         type:String,
         required:true
@@ -32,4 +36,5 @@ const demandSchema=new mongoose.Schema({
     }
 })
 const Demand=mongoose.model("demand",demandSchema);
+
 module.exports=Demand

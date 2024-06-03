@@ -10,6 +10,7 @@ export interface Invoice {
   
 
   // src/types/product.ts
+
 export interface Product {
     id: number;
     photo: string;
@@ -21,7 +22,7 @@ export interface Product {
   }
   
 
-export interface User{
+  export interface User {
     id: number;
     name: string;
     email: string;
@@ -29,4 +30,15 @@ export interface User{
     college: string;
     hostel: string;
     phone: string;
-}
+  }
+  
+
+  export interface Order{
+    id: number;
+    productname : string;
+    demand : string;
+    description: String;
+    duration : Number;
+    returnDate: Date;
+    isreview: String;
+  }
