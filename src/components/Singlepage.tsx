@@ -119,8 +119,7 @@ const Singlepage: React.FC<SinglepageProps> = ({ Product, Id }) => {
     const cartItem = {
       id: Product.id,
       name: Product.title,
-      // price: parseFloat(Product.price),
-      price:Product.price,
+      price: parseFloat(Product.price),
       image: Product.photo,
     };
 
