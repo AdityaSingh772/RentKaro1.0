@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 // Log environment variable to verify it's loaded correctly
-console.log('MongoDB URL:', process.env.MONGO_URL_FORM);
+
 
 // Connection
 const port = process.env.PORT || 5000;
