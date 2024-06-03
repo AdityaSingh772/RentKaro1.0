@@ -1,7 +1,13 @@
+// src/components/for adminDashboard/InvoiceItem.tsx
 import React from 'react';
+import { Invoice } from './invoice';
 
-const InvoiceItem = ({ invoice }) => {
-  const statusStyles = {
+interface InvoiceItemProps {
+  invoice: Invoice;
+}
+
+const InvoiceItem: React.FC<InvoiceItemProps> = ({ invoice }) => {
+  const statusStyles: { [key in Invoice['status']]: string } = {
     Paid: 'text-green-500',
     Unpaid: 'text-yellow-500',
     Overdue: 'text-red-500',

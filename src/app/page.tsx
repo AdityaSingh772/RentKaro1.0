@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Search from "@/components/Search";
-import RentPage from "../components/RentPage";
+import RentPage from "./rent/page";
 import {useUser} from "@auth0/nextjs-auth0/client"
 import {Firstpage} from "@/components/Firstpage";
 import ExtraDetailForm from "@/components/ExtraDetailForm"
@@ -10,53 +10,35 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Preloader from "@/components/PreLoader";
 
+export default function Home() {
+  const { user, error, isLoading } = useUser();
 
-
-
-export default function Home(){
-
-  const {user,error,isLoading}=useUser();
-
-
-
-
-  
-//preloader added
-if (isLoading) return (
-  <div>
-    <Preloader/>
-  </div>
-);
-//preloader end
+  //preloader added
+  if (isLoading)
+    return (
+      <div>
+        <Preloader />
+      </div>
+    );
+  //preloader end
   // return (
   //   <Firstpage/>
   // )
 
-
-
-
-
-
-
-
-  if(user){
+  if (user) {
     return (
     
-      <main className="mt-[4.75rem]">
+      <main>
           <Search/>
-         
+          {/* <RentPage/> */}
           
       </main>
     );
-  }
-  else{
+  } else {
     return (
-      <main className="mt-[4.5rem]">
+      <main>
         <Firstpage/>
       </main>
-    )
+    );
   }
-  
-
 }
-
