@@ -17,8 +17,6 @@ const Preloader = () => {
               ballColors={["white", "white", "white"]}
               backgroundColor="white"
             />
-               
-
             </div>
         </div>
     );

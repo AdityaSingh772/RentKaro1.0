@@ -9,19 +9,4 @@ const {deletead} = require('../controllers/delete')
 // GET request to fetch items
 router.get('/api/items', getad);
 
-//GET request to search data
-router.get('/api/search', search);
-
-
-//to display on the dashboard
-router.get("/api/dashboard", getdashboard);
-
-
-//delete user ads
-router.delete('/api/delete', deletead);
-  
-
-
-
-
 module.exports = router;
