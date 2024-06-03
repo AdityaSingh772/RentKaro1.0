@@ -25,13 +25,9 @@ if (!mongoUrl) {
   throw new Error('MONGO_URL_FORM environment variable is not set');
 }
 
-mongoose.connect(mongoUrl)
-  .then(() => {
-    console.log('MongoDB connected');
-  })
-  .catch(err => {
-    console.error('MongoDB connection error: ', err);
-  });
+mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 // Multer config
 const storage = multer.diskStorage({
