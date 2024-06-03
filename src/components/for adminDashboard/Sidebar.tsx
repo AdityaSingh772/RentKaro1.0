@@ -13,7 +13,7 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveComponent }) => {
       </div>
       <nav>
         <ul className="space-y-4">
-          <li>
+          {/* <li>
             <button
               onClick={() => setActiveComponent('InvoiceList')}
               className="flex items-center text-white hover:bg-blue-600 transition-colors duration-200 font-medium p-3 rounded-md w-full text-left"
@@ -23,7 +23,7 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveComponent }) => {
               </svg>
               Invoice List
             </button>
-          </li>
+          </li> */}
           <li>
             <button
               onClick={() => setActiveComponent('OrdersAdmin')}

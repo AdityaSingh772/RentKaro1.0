@@ -31,7 +31,7 @@ const OrdersAdmin: React.FC<OrdersAdminProps> = ({ products }) => {
                 <tr key={product.id} className="hover:bg-gray-100">
                   <td className="px-6 py-4 text-left text-sm font-medium text-gray-700">{product.id}</td>
                   <td className="px-6 py-4 text-left text-sm text-gray-700">
-                    <img src="image-url" alt='image' />
+                    <img src={product.photo} alt='image' />
                   </td>
                   <td className="px-6 py-4 text-right text-sm text-gray-700">{product.brand}</td>
                   <td className="px-6 py-4 text-right text-sm text-gray-700">{product.title}</td>

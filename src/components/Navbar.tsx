@@ -34,7 +34,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-black text-white p-4 flex items-center justify-between border-b-2 overflow-x-hidden">
+      <nav className="bg-black text-white p-4 flex items-center justify-between border-b-2 overflow-x-hidden ">
         <div className="flex items-center space-x-8 mx-8">
           <div className="flex lg:hidden">
             <button onClick={toggleMobileMenu}>
