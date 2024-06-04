@@ -9,6 +9,7 @@ import { IoIosLogOut } from 'react-icons/io';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Preloader from './PreLoader';
+import Tooltip from './Tooltip';
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -83,9 +84,11 @@ const Navbar = () => {
               <button className="row-start-1 mx-[0.75rem] hover:text-blue-500">
                 <Link href="/cart"><HiOutlineShoppingCart className="w-6 h-6" /></Link>
               </button>
-              <Link href="/demandlist" className="row-start-1 mx-[0.75rem] hover:text-blue-500">
+              <button  className="row-start-1 mx-[0.75rem] hover:text-blue-500">
+              <Link href="/demandlist" className="w-6 h-6">
                 <TbNotebook className="w-6 h-6" />
               </Link>
+              </button>
               <button className="row-start-1 mx-[0.75rem] hover:text-blue-500">
                 <Link href="/dashboard"><FiUser className="w-6 h-6" /></Link>
               </button>
