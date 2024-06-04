@@ -40,7 +40,7 @@ const MainLayout: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/items");
+        const response = await axios.get(`${process.env.SERVER_API}/api/items`);
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -53,7 +53,7 @@ const MainLayout: React.FC = () => {
   useEffect(() => {
     const fetchClient = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/clients");
+        const response = await axios.get(`${process.env.SERVER_API}/api/clients`);
         setClient(response.data);
       } catch (error) {
         console.error("Error fetching client data:", error);
@@ -66,7 +66,7 @@ const MainLayout: React.FC = () => {
   useEffect(()=>{
         const fetchOrders = async() => {
           try {
-            const response = await axios.get("http://localhost:5000/api/demand");
+            const response = await axios.get(`${process.env.SERVER_API}/api/demand`);
             setOrder(response.data);
           } catch (error) {
             console.error("Error fetching order :", error);

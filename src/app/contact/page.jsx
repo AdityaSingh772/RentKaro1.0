@@ -21,7 +21,7 @@ const App = () => {
     e.preventDefault();
 
     try {
-        const response = await axios.post('http://localhost:5000/api/contact-message', formData);
+        const response = await axios.post(`${process.env.SERVER_API}/api/contact-message`, formData);
         console.log('Sending email', response.data);
         alert('Email sent successfully!');
         setFormData(

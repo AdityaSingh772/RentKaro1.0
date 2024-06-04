@@ -17,7 +17,7 @@ const RentPage = () => {
   useEffect(() => {
     const fetchData = async () =>{
       try {
-          const response = await axios.get("http://localhost:5000/api/items");
+          const response = await axios.get(`${process.env.SERVER_API}/api/items`);
           setData(response.data);
           console.log(response.data);
       } catch (error) {

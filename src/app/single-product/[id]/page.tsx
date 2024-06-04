@@ -20,6 +20,7 @@ import axios from 'axios';
 
 interface ProductData {
   id: number;
+  email:string;
   brand: string;
   title: string;
   description: string;
@@ -40,7 +41,7 @@ const SingleProductPage = ({ params }: { params: { id: string } }) => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/api/items`);
+          const response = await axios.get(`${process.env.SERVER_API}/api/items`);
           const product = response.data.find((item: ProductData) => item.id === parseInt(id));
           console.log(product);
           setData({ Product: product? [product] : [] });
