@@ -48,7 +48,7 @@ const Navbar = () => {
         <Link href="/buy" className="px-4 py-2  hover:bg-white hover:text-black  rounded-full ">
           Buy
         </Link>
-        <Link href="/rent" className="px-4 py-2   hover:bg-white hover:text-black   rounded-full">
+        <Link href="/sell" className="px-4 py-2   hover:bg-white hover:text-black   rounded-full">
           Rent
         </Link>
         <Link href="/sell" className="px-4 py-2   hover:bg-white hover:text-black   rounded-full">
@@ -63,13 +63,13 @@ const Navbar = () => {
 
           {/* // this is important property can be use in future too */}
           <div className={`${isvisible ? 'hidden' : 'flex space-x-4 border-2 border-neutral-400 shadow-md rounded-full '}`} >
-          <Link href="/Contact" className="px-4 py-2 hover:bg-white hover:text-black rounded-full ">
+          <Link href="/contact" className="px-4 py-2 hover:bg-white hover:text-black rounded-full ">
           Contact Us
         </Link>
-        <Link href="/About" className="px-4 py-2 hover:bg-white hover:text-black  rounded-full">
+        <Link href="/about" className="px-4 py-2 hover:bg-white hover:text-black  rounded-full">
           About
         </Link>
-        <Link href="/Our-Team" className="px-4 py-2  hover:bg-white hover:text-black  rounded-full">
+        <Link href="/team" className="px-4 py-2  hover:bg-white hover:text-black  rounded-full">
           Our-Team
         </Link>
         <Link href="" className="px-4 py-2   hover:bg-white hover:text-black  rounded-full animate-bounce" onClick={handleLink}>
