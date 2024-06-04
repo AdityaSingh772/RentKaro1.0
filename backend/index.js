@@ -1,13 +1,16 @@
 require('dotenv').config();
-const express = require("express");
-const mongoose  = require("mongoose");
+const express = require('express');
+const mongoose = require('mongoose');
 const multer = require('multer');
 const cors = require('cors');
-const path = require("path");
-const userRouter = require("./routes/user");
-const Ad = require("./models/ad");
+const path = require('path');
+const userRouter = require('./routes/user');
+const adRouter = require('./routes/ad');
+const demandRouter = require('./routes/demand');
+const clientRouter = require('./routes/client');
+const Ad = require('./models/ad');
 const app = express();
-const adRouter = require("./routes/ad");
+
 app.use(cors());
 app.use(express.json());
 
