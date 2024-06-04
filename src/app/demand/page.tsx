@@ -25,7 +25,7 @@ const Demandpage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const demand = await axios.post(`${process.env.SERVER_API}/api/demand`, DemandState);
+      const demand = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_API}/api/demand`, DemandState);
       alert("The demand is sent for review from the admin");
       setTimeout(() => {
         window.location.href = '/';

@@ -28,7 +28,7 @@ const Search: React.FC = () => {
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await axios.get<Product[]>(`${process.env.SERVER_API}/api/search`, {
+      const response = await axios.get<Product[]>(`${process.env.NEXT_PUBLIC_SERVER_API}/api/search`, {
         params: { q: query, college: college }
       });
       setResult(response.data);

@@ -43,7 +43,7 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
   const fetchData = async () => {
     try {
-      const response = await axios.get(`${process.env.SERVER_API}/api/dashboard`, {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_API}/api/dashboard`, {
         params: {
           email: email
         }

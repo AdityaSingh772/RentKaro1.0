@@ -30,7 +30,7 @@ const RentPage: React.FC<RentPageProps> = ({ searchRes, college }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get<Product[]>(`${process.env.SERVER_API}/api/items`);
+        const response = await axios.get<Product[]>(`${process.env.NEXT_PUBLIC_SERVER_API}/api/items`);
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -45,7 +45,7 @@ const RentPage: React.FC<RentPageProps> = ({ searchRes, college }) => {
     if (!searchRes) {
       const fetchData = async () => {
         try {
-          const response = await axios.get<Product[]>(`${process.env.SERVER_API}/api/items`);
+          const response = await axios.get<Product[]>(`${process.env.NEXT_PUBLIC_SERVER_API}/api/items`);
           setData(response.data);
         } catch (error) {
           console.error("Error fetching data:", error);

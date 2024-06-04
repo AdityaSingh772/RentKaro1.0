@@ -23,7 +23,7 @@ const ExtraDetailForm: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const response = await axios.post(`${process.env.SERVER_API}/submit`, formData);
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_API}/submit`, formData);
         if (response.status === 201) {
             alert("The form is submitted.");
             setTimeout(() => {

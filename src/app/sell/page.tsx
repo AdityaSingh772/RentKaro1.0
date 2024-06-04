@@ -88,7 +88,7 @@ const PostAdForm: React.FC = () => {
     });
   
     try {
-      const response = await axios.post(`${process.env.SERVER_API}/api/productadmin`, formData, {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_API}/api/productadmin`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

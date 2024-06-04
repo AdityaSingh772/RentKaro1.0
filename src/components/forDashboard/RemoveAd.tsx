@@ -59,7 +59,7 @@ const router = useRouter();
                 className='rounded-full bg-[#FF0000] hover:border-blue-500 hover:text-blue-500 text-white border-2 border-white p-2'
                 onClick={async () => {
                   try {
-                    const response = await axios.delete(`${process.env.SERVER_API}/api/delete`, {
+                    const response = await axios.delete(`${process.env.NEXT_PUBLIC_SERVER_API}/api/delete`, {
                       data: {
                         id: product.id,
                         email: product.email

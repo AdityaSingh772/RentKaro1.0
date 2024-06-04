@@ -18,7 +18,7 @@ const DemandList: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    axios.get<Demand[]>(`${process.env.SERVER_API}/api/demand`)
+    axios.get<Demand[]>(`${process.env.NEXT_PUBLIC_SERVER_API}/api/demand`)
      .then(response => {
         console.log('Response:', response);
         setDemandData(response.data);
