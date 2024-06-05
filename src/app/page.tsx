@@ -9,7 +9,7 @@ import {Firstpage} from "@/components/Firstpage";
 
 
 import Preloader from "@/components/PreLoader";
-import Navbar from "@/components/Navbar";
+
 
 export default function Home() {
   const { user, error, isLoading } = useUser();
@@ -26,7 +26,7 @@ export default function Home() {
   if (user) {
     return (
       <main>
-        <Navbar/>
+        
           <Search/>
       </main>
     );

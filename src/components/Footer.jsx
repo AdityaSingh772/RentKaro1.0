@@ -1,12 +1,12 @@
 "use client";
 import React from 'react';
-import { useUser } from '@auth0/nextjs-auth0/client';
+
 
 const Footer = () => {
-  const { user } = useUser();
+  
 
   return (
-    <div className=''>
+    <div className='bg-neutral-700'>
       <footer className="bg-black rounded-lg shadow-lg shadow-black my-4 p-4">
         <div className="w-full max-w-screen-xl mx-auto md:py-8">
           <div className="sm:flex sm:items-center sm:justify-between">
