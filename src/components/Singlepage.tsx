@@ -1,10 +1,12 @@
 
-import Image from 'next/image';
+
+import { Prosto_One } from 'next/font/google';
 import React from 'react';
 
 interface ProductData {
   id: number;
   email:string;
+  type:string;
   brand: string;
   title: string;
   description: string;
@@ -39,40 +41,50 @@ const Singlepage: React.FC<SinglepageProps> = ({ Product, Id }) => {
   };
 
   return (
-    <div className="w-1/2 bg-fuchsia-100 flex flex-col items-center justify-center p-8 shadow-lg mt-8">
-      <div key={Product.id} className="w-full max-w-2xl flex flex-col gap-8 bg-white p-6 rounded-lg transition duration-300 transform hover:scale-105">
+    <div className="w-1/2 bg-black flex flex-col items-center justify-center p-8 shadow-lg my-[4.5rem]">
+      <div key={Product.id} className="px-[3.5rem] w-full  border-l-2 border-blue-500  max-w-2xl flex flex-col gap-8 bg-black p-6 ">
         <div className="text-center">
-          <h1 className="font-extrabold text-4xl mt-8">{Product.title}</h1>
+          <h1 className="font-extrabold text-white text-4xl mt-8">{Product.title}</h1>
           <span className="block mt-2 text-xl text-green-600">Price: ${Product.price}</span>
         </div>
-        <p className="mt-4 text-gray-700 text-lg leading-relaxed">{Product.description}</p>
+        <p className="mt-4 text-neutral-300 text-lg leading-relaxed">{Product.description}</p>
         <div className="flex items-center justify-between gap-4 mt-4 ">
           <div className='flex gap-4'>
-            <Image src="/cart.png" alt="Cart Icon" height={15} width={30} />
+
             <button
               type="button"
-              className="py-2 px-6 text-sm bg-gray-900 border-b-4 font-bold from-[#2BC0E4] to-[#EAECC6] drop-shadow-lg inline-block text-transparent bg-clip-text bg-gradient-to-r rounded-lg shadow-md hover:bg-gradient-to-l hover:scale-105 transition duration-300 ease-in-out"
+              className="block w-full px-4 py-2 hover:bg-white bg-black text-white border-2 border-blue-500 hover:text-black rounded-full shadow-md hover:shadow-lg"
               onClick={handleAddToWishlist}
             >
-              Add to WishList
+              Add to Wishlist
             </button>
           </div>
-          <div className='flex gap-2'>
-            <button className="py-3 px-6 bg-gradient-to-r from-[#FF7E5F] to-[#FEB47B] text-xl text-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-gradient-to-l">
+          {
+            (Product.type === 'rent')?(
+              <div className='flex gap-2'>
+            <button className="block w-full px-4 py-2 bg-white text-black rounded-full shadow-md hover:shadow-lg">
+              Owner wants to rent
+            </button>
+            
+          </div>
+            ):(
+              <div className='flex gap-2'>
+            <button className="block w-full px-4 py-2 hover:bg-white bg-black text-white border-2 border-blue-500 hover:text-black rounded-full shadow-md hover:shadow-lg">
               Buy
             </button>
-            <button className="py-3 px-6 bg-gradient-to-r from-[#76B852] to-[#8DC26F] text-xl text-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-gradient-to-l">
-              Rent
-            </button>
+            
           </div>
+            )
+          }
+          
         </div>
 
-        <div className="mt-2 bg-gray-50 p-6 rounded-lg shadow-inner">
+        <div className="mt-2 bg-white p-6 rounded-lg shadow-inner">
           <p className="font-extrabold text-2xl mb-4">Owner Details</p>
-          <h2 className="text-xl font-semibold text-gray-800">{Product.brand}</h2>
-          <div className="mt-2 text-gray-600">
+          <h2 className="text-xl font-semibold text-neutral-800">{Product.brand}</h2>
+          <div className="mt-2 text-neutral-700">
             <div className="flex items-center">
-              <label className="font-semibold">Hostel: </label>
+              <label className="font-semibold">College: </label>
               <p className="ml-2">{Product.college}</p>
             </div>
             <div className="flex items-center mt-2">

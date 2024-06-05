@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Result from '@/components/Result';
 import ProductList from '@/components/ProductList';
 import axios from 'axios';
-import Categories from './Catagories';
+
 import Footer from './Footer';
 
 interface Product {
@@ -61,14 +61,13 @@ const RentPage: React.FC<RentPageProps> = ({ searchRes, college }) => {
   }, [searchRes]);
 
   return (
-    <div className="container h-screen w-full flex flex-col">
+    <div className="container flex flex-col overflow-hidden pt-20">
       <Result Size={data.length} college={college} />
       {loading ? (
         <div className='bg-black text-white'>Loading</div>
       ) : (
         <ProductList Products={data} />
       )}
-      <Footer />
     </div>
   );
 };

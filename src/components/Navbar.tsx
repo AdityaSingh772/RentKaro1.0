@@ -1,6 +1,5 @@
 "use client"
 
-
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FiHeart, FiUser, FiMenu, FiX } from 'react-icons/fi';
@@ -34,7 +33,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full bg-black text-white p-4 flex items-center justify-between border-b-2 overflow-x-hidden">
+      <nav className="fixed top-0 left-0 w-full bg-black text-white p-4 flex items-center justify-between border-b-2 overflow-x-hidden z-20">
         <div className="flex items-center space-x-8 mx-8">
           <div className="flex lg:hidden">
             <button onClick={toggleMobileMenu}>
@@ -52,7 +51,7 @@ const Navbar = () => {
             <Link href="/" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
               Buy
             </Link>
-            <Link href="/rent" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
+            <Link href="/sell" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
               Rent
             </Link>
             <Link href="/sell" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
@@ -101,7 +100,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className={`${isMobileMenuOpen ? 'flex' : 'hidden'} lg:hidden bg-black text-white p-4 flex-col space-y-4 border-t-2 fixed w-full top-16 z-50`}>
+      <div className={`${isMobileMenuOpen ? 'flex' : 'hidden'} lg:hidden bg-black text-white p-4 flex-col space-y-4 border-t-2 fixed w-full top-16 z-20`}>
         <button onClick={toggleMobileMenu} className="self-end">
           <FiX className="w-6 h-6" />
         </button>
@@ -114,7 +113,7 @@ const Navbar = () => {
         <Link href="/sell" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
           Sell
         </Link>
-        <Link href="" className="px-4 py-2 hover:bg-white hover:text-black rounded-full animate-bounce" onClick={handleLink} >
+        <Link href="" className="px-4 py-2 hover:bg-white hover:text-black rounded-full animate-bounce" onClick={handleLink}>
           more
         </Link>
       </div>
