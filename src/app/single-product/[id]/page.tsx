@@ -21,6 +21,7 @@ import axios from 'axios';
 interface ProductData {
   id: number;
   email:string;
+  type:string;
   brand: string;
   title: string;
   description: string;
