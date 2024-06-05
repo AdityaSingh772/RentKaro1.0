@@ -7,7 +7,6 @@ const search = async (req, res) => {
   try {
     let results;
     if (query || college) {
-      
       results = await Ad.find({
         $and: [
           query ? {
@@ -22,7 +21,6 @@ const search = async (req, res) => {
         ]
       });
     } else {
-     //to return all ads
       results = await Ad.find({});
     }
 

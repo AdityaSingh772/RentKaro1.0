@@ -9,6 +9,7 @@ const adRouter = require('./routes/ad');
 const demandRouter = require('./routes/demand');
 const clientRouter = require('./routes/client');
 const Ad = require('./models/ad');
+const searchRoutes = require('./routes/searchRoutes');
 const app = express();
 
 app.use(cors());
@@ -107,7 +108,7 @@ app.use('/',userRouter);
 //ad ke routes yaha se
 app.use("/", adRouter);
 
-
+app.use("/", searchRoutes);
 
 app.use('/', demandRouter);
 app.use('/', clientRouter);
