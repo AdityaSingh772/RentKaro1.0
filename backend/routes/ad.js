@@ -8,6 +8,9 @@ const {deletead} = require('../controllers/delete')
 
 // GET request to fetch items
 router.get('/api/items', getad);
+router.get('/api/dashboard', getdashboard);
 
+//to delete the data user wants to delete
+router.delete('/api/delete', deletead);
 
 module.exports = router;

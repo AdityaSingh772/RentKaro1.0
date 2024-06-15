@@ -8,6 +8,7 @@ import { IoIosLogOut } from 'react-icons/io';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Preloader from './PreLoader';
+import Tooltip from './Tooltip';
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);

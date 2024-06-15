@@ -77,7 +77,7 @@ const MainLayout: React.FC = () => {
 
   
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className=" mt-[4.5rem] flex h-screen bg-gray-100">
       <Sidebar setActiveComponent={setActiveComponent} />
       <div className="flex-1 flex flex-col ml-64">
         <Header />
