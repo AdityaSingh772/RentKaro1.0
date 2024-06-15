@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RentKaro
 
-## Getting Started
+[![Deployment Status](https://img.shields.io/badge/Deployment-Live-brightgreen)](https://rent-karo.vercel.app)
 
-First, run the development server:
+Welcome to **RentKaro** – the ultimate marketplace app designed specifically for college campuses. With RentKaro, students can seamlessly rent, sell, and buy items within their campus community. Whether you need a textbook, a bike, or even a game console, RentKaro makes it easy and secure to find exactly what you're looking for.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [About the Project](#about-the-project)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## About the Project
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+RentKaro revolutionizes the way students interact with each other in terms of renting, buying, and selling goods. Imagine a vibrant community where you can find affordable items right on your campus! RentKaro is more than just an app; it’s a thriving ecosystem fostering sustainability and convenience.
 
-## Learn More
+With an intuitive user interface and robust backend, RentKaro ensures that transactions are smooth and hassle-free. From high-demand gadgets to essential everyday items, RentKaro has got it all covered.
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **User Authentication**: Secure and seamless user registration and login with Auth0 by Okta.
+- **Dynamic Listings**: Real-time posting, updating, and deleting of listings.
+- **Admin Features**: There are various admin control features, which are not shown on the frontend for obvious reasons. Admin can control various things about the posts and feedback messages are also shown on the admin dashboard.
+- **Advanced Search**: Powerful search functionality to find exactly what you need quickly.
+- **User Profiles**: Detailed user profiles.
+- **Demands**: Real-time postings for new demands of items, on demand page.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+RentKaro leverages a cutting-edge technology stack to deliver a robust and scalable application:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Frontend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Next.js**: For Frontend and a seamless user experience.
+- **Vercel**: Deployment platform for the frontend, ensuring high performance and reliability.
+
+### Backend
+
+- **Express**: Fast, unopinionated, minimalist web framework for Node.js.
+- **Node.js**: A JavaScript runtime built on Chrome's V8 JavaScript engine.
+- **MongoDB**: A powerful, flexible, and scalable NoSQL database.
+- **Railway**: Deployment platform for the backend, providing seamless integration and scalability.
+
+## Installation
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+- Node.js
+- npm
+- MongoDB
+
+### Installation Steps
+
+1. Clone the repository
+   ```sh
+   git clone https://github.com/AdityaSingh772/RentKaro1.0
+   ```
+2. Navigate to the project directory
+3. Install frontend dependencies
+   ```sh
+   npm install
+   ```
+4. Install backend dependencies
+   ```sh
+   cd backend
+   npm install
+   ```
+5. Set up environment variables by creating a `.env` file in the root of the backend directory
+   ```env
+   MONGO_URI=your_mongodb_connection_string
+   PORT = 5000
+   ```
+
+## Usage
+
+To run the application locally:
+
+### Frontend
+
+1. Navigate to the frontend directory
+2. Start the development server
+   ```sh
+   npm run dev
+   ```
+   The frontend will be available at [http://localhost:3000](http://localhost:3000).
+
+### Backend
+
+1. Navigate to the backend directory
+   ```sh
+   cd backend
+   ```
+2. Start the backend server
+   ```sh
+   npm start
+   ```
+   The backend will be running on [http://localhost:5000](http://localhost:5000).
+
+## Deployment
+
+The RentKaro app is deployed and live!
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. 
+
+## Contact
+
+Aditya Singh - [workwithracian@gmail.com](mailto:workwithracian@gmail.com)
+
+Thank you for visiting the RentKaro repository! We hope you enjoy using RentKaro as much as we enjoyed building it. If you have any questions or suggestions, feel free to reach out. Happy renting, buying, and selling!
