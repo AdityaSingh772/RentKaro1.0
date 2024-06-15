@@ -1,12 +1,6 @@
 "use client";
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
-
-// const images = [
-//   '/random1.jpg',
-//   '/random2.jpg',
-//   '/random3.jpg',
-//   '/random4.jpg'
-// ];
 
 const ProductCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,7 +8,7 @@ const ProductCarousel = ({ images }) => {
 
   const handleNext = () => {
     const isLastSlide = currentIndex === images.length - 1;
-    const newIndex = isLastSlide? 0 : currentIndex + 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
 
@@ -28,17 +22,18 @@ const ProductCarousel = ({ images }) => {
   }, [currentIndex, isHovered]);
 
   return (
-    <div className="flex h-[35rem] p-9 w-1/2 mt-7">
+    <div className="flex h-full px-9 py-[6.5rem]  w-full">
       <div 
-        className="relative w-full h-full flex items-center justify-center bg-pink-100 rounded-lg overflow-hidden shadow-lg"
+        className="relative w-full h-full flex items-center justify-center bg-black border-2 border-blue-500 rounded-lg overflow-hidden shadow-lg"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="w-full h-full flex items-center justify-center">
-          <img 
-            src={images[currentIndex]} 
-            alt={`Product Image ${currentIndex + 1}`} 
-            className="object-cover w-full h-full transition-opacity duration-1000" 
+        <div className="relative w-full h-full">
+          <Image
+            src={images[currentIndex]}
+            alt={`Product Image ${currentIndex + 1}`}
+            layout="fill"
+            objectFit="contain"
           />
         </div>
         <div className="absolute inset-0 bg-white opacity-10"></div>
@@ -48,4 +43,3 @@ const ProductCarousel = ({ images }) => {
 };
 
 export default ProductCarousel;
-

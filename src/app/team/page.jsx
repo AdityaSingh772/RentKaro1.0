@@ -6,21 +6,22 @@ const teamMembers = [
     name: "Aditya Singh",
     position: "Co Founder",
     image: "/adi.jpg",
-    description: "Aditya is the visionary behind our company, bringing years of experience in the tech industry.",
+    description: "Aditya is the visionary behind our company, bringing years of experience in the tech industry. His leadership and innovative mindset have been instrumental in steering the company towards new heights. Aditya's commitment to excellence and passion for technology continue to inspire the entire team.",
   },
   {
     name: "Dinesh Jangid",
     position: "Co Founder",
     image: "",
-    description: "Apna decription likho",
+    description: "Dinesh is a key pillar of our organization, known for his unwavering dedication and strategic thinking. His ability to tackle challenges head-on and his deep understanding of market dynamics make him an invaluable asset to the team. Dinesh's collaborative spirit and humility set a great example for all of us.",
   },
   {
     name: "Jeet Chandak",
     position: "Co Founder",
     image: "/jeet.jpg",
-    description: "Apna decription likho",
+    description: "Jeet is a cornerstone of our company, contributing his expertise and enthusiasm to every project. His commitment to fostering a positive work environment and his knack for finding innovative solutions have significantly enhanced our operations. Jeet's humble nature and willingness to support his colleagues make him a cherished member of our team.",
   },
 ];
+
 
 const OurTeam = () => {
   return (

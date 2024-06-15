@@ -8,14 +8,14 @@ import Footer from './Footer';
 interface Product {
   id: number;
   type: string;
-  email: string;
   brand: string;
   title: string;
   description: string;
-  price: string;
-  photo: string;
+  price: number;
+  photos: string[];
   college: string;
   phone: string;
+  email: string;
 }
 
 interface RentPageProps {

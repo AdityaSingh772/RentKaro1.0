@@ -4,15 +4,15 @@ import {useRouter} from "next/navigation"
 
 interface Product {
   id: number;
-  type:string,
-  email:string;
+  type: string;
   brand: string;
   title: string;
   description: string;
-  price: string;
-  photo: string;
+  price: number;
+  photos: string[];
   college: string;
   phone: string;
+  email: string;
 }
 
 interface ManageProps {
@@ -42,7 +42,7 @@ const router = useRouter();
         <div className="flex space-x-4">
           {userData?.map(product => (
             <div key={product.id} className="bg-black border-2 border-white hover:border-blue-500  rounded-lg shadow-md p-4 relative w-64 flex-none">
-              <img src={product.photo} alt="Product" className="w-full h-48 object-cover rounded-lg" />
+              <img src={product.photos[0]} alt="Product" className="w-full h-48 object-cover rounded-lg" />
               <div className="absolute top-4 right-4">
                 
               </div>

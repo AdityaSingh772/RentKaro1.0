@@ -5,15 +5,15 @@ import React from 'react';
 
 interface ProductData {
   id: number;
-  email:string;
-  type:string;
+  type: string;
   brand: string;
   title: string;
   description: string;
-  price: string;
-  photo: string;
+  price: number;
+  photos: string[];
   college: string;
   phone: string;
+  email: string;
 }
 
 
@@ -27,8 +27,8 @@ const Singlepage: React.FC<SinglepageProps> = ({ Product, Id }) => {
     const cartItem = {
       id: Product.id,
       name: Product.title,
-      price: parseFloat(Product.price),
-      image: Product.photo,
+      price: Product.price,
+      image: Product.photos[0],
     };
 
     const existingCart = JSON.parse(localStorage.getItem('cartItems') || '[]');

@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FiHeart, FiCheckCircle } from 'react-icons/fi';
+import { FiCheckCircle } from 'react-icons/fi';
 import { HiOutlineShoppingCart } from "react-icons/hi";
+import Image from 'next/image';
 
 interface Product {
   id: number;
   type: string;
-  email: string;
   brand: string;
   title: string;
   description: string;
-  price: string;
-  photo: string;
+  price: number;
+  photos: string[];
   college: string;
   phone: string;
+  email: string;
 }
 
 interface ProductListProps {
@@ -40,8 +41,8 @@ const ProductList: React.FC<ProductListProps> = ({ Products }) => {
       const cartItem = {
         id: product.id,
         name: product.title,
-        price: parseFloat(product.price),
-        image: product.photo,
+        price: product.price,
+        image: product.photos[0],
       };
       const existingCart = JSON.parse(localStorage.getItem('cartItems') || '[]');
       existingCart.push(cartItem);
@@ -63,7 +64,12 @@ const ProductList: React.FC<ProductListProps> = ({ Products }) => {
           {Products.map((product) => (
             <Link key={product.id} href={`/single-product/${product.id}`}>
               <div className="bg-gray-800 rounded-lg shadow-md p-4 relative hover:bg-gray-700 transition duration-300">
-                <img src={product.photo} alt={product.title} className="w-full h-48 object-cover rounded-lg" />
+                <img 
+                
+                  src={product.photos[0] ? product.photos[0] : 'http://dummyimage.com/132x100.png/ff4444/ffffff'} 
+                  alt={product.title} 
+                  className="w-full h-48 object-cover rounded-lg" 
+                />
                 <div className="absolute top-4 right-4">
                   <button
                     className={`bg-white p-2 rounded-full shadow-md hover:shadow-lg focus:outline-none ${
