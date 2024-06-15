@@ -5,8 +5,8 @@ import axios from 'axios';
 
 interface Demand {
   id: number;
-  productName: string;
-  demandType: string;
+  productname: string;
+  demand: string;
   returnDate: string;
   description: string;
   duration: string;
@@ -40,19 +40,17 @@ const DemandList: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black py-8 px-4 mt-8">
-<h1 className="text-4xl font-bold text-center mt-7 mb-8 text-white relative">
-  <span className="mb-4">Demand List</span>
-</h1>
+    <div className="min-h-screen bg-black py-8 px-4 mt-[4.5rem]">
+<h1 className="text-blue-500 text-4xl text-center font-bold mt-[1.5rem] mb-[2.5rem]">Incoming Demands</h1>
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {demandData.map(demand => (
-            <div key={demand.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <h2 className="text-2xl font-semibold mb-2">{demand.productName}</h2>
-              <p className="text-neutral-700 mb-1"><strong>Demand Type:</strong> {demand.demandType}</p>
-              <p className="text-neutral-700 mb-1"><strong>Return Date:</strong> {demand.returnDate}</p>
-              <p className="text-neutral-700 mb-1"><strong>Duration:</strong> {demand.duration}</p>
-              <p className="text-neutral-700 mt-4">{demand.description}</p>
+            <div key={demand.id} className="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <h2 className="text-2xl text-blue-500 font-semibold mb-2">{demand.productname}</h2>
+              <p className="text-white mb-1"><strong>Demand Type:</strong> {demand.demand}</p>
+              <p className="text-white mb-1"><strong>Return Date:</strong> {demand.returnDate}</p>
+              <p className="text-white mb-1"><strong>Duration:</strong> {demand.duration}</p>
+              <p className="text-white mt-4">{demand.description}</p>
             </div>
           ))}
         </div>

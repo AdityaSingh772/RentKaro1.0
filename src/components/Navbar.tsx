@@ -80,9 +80,13 @@ const Navbar = () => {
         <div className="flex font-bold text-white items-center space-x-2">
           {user ? (
             <div className="grid grid-rows-1">
+              
               <button className="row-start-1 mx-[0.75rem] hover:text-blue-500">
+              <Tooltip tooltipContent="cart">
                 <Link href="/cart"><HiOutlineShoppingCart className="w-6 h-6" /></Link>
+                </Tooltip>
               </button>
+              
               <Link href="/demandlist" className="row-start-1 mx-[0.75rem] hover:text-blue-500">
                 <TbNotebook className="w-6 h-6" />
               </Link>
