@@ -1,9 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const multer = require('multer');
 const cors = require('cors');
-const path = require('path');
 const userRouter = require('./routes/user');
 const adRouter = require('./routes/ad');
 const demandRouter = require('./routes/demand');
@@ -32,35 +30,7 @@ then(()=>{
 
 
 
-//multer config yaha se
-// const storage = multer.diskStorage({
-//     destination: './adImages/',
-//     filename: function (req, file, cb) {
-//       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-//     }
-//   });
-  
-  
-  // const upload = multer({
-  //   storage: storage,
-  //   limits: { fileSize: 1000000 },
-  //   fileFilter: function (req, file, cb) {
-  //     checkFileType(file, cb);
-  //   }
-  // }).array('photos', 5); // maximum 5 image lunga
-  
-  // file type check karne khatir
-  // function checkFileType(file, cb) {
-  //   const filetypes = /jpeg|jpg|png|gif/;
-  //   const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-  //   const mimetype = filetypes.test(file.mimetype);
-  
-  //   if (mimetype && extname) {
-  //     return cb(null, true);
-  //   } else {
-  //     cb('Error: Images Only!');
-  //   }
-  // }
+
   
   app.post('/api/productadmin', async (req, res) => {
     try {
