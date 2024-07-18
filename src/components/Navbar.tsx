@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -34,8 +34,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full bg-black text-white p-4 flex items-center justify-between border-b-2 overflow-x-hidden z-20">
-        <div className="flex items-center space-x-8 mx-8">
+      <nav className="fixed top-0 left-0 w-full bg-black text-white p-4 grid grid-cols-3 items-center border-b-2 overflow-x-hidden z-20">
+        <div className="flex items-center space-x-8">
           <div className="flex lg:hidden">
             <button onClick={toggleMobileMenu}>
               <FiMenu className="w-6 h-6" />
@@ -47,58 +47,58 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        <div className="hidden lg:flex space-x-4">
-          <div className={`${!isVisible ? 'hidden' : 'flex space-x-4 border-2 border-neutral-400 shadow-md rounded-full'}`}>
-            <Link href="/" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
-              Buy
-            </Link>
-            <Link href="/sell" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
-              Rent
-            </Link>
-            <Link href="/sell" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
-              Sell
-            </Link>
-            <Link href="" className="px-4 py-2 hover:bg-white hover:text-black rounded-full animate-bounce" onClick={handleLink}>
-              more
-            </Link>
-          </div>
-          <div className={`${isVisible ? 'hidden' : 'flex space-x-4 border-2 border-neutral-400 shadow-md rounded-full'}`}>
-            <Link href="/contact" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
-              Contact Us
-            </Link>
-            <Link href="/about" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
-              About
-            </Link>
-            <Link href="/team" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
-              Our Team
-            </Link>
-            <Link href="" className="px-4 py-2 hover:bg-white hover:text-black rounded-full animate-bounce" onClick={handleLink}>
-              more
-            </Link>
+        <div className="flex justify-center">
+          <div className="hidden lg:flex space-x-4">
+            <div className={`${!isVisible ? 'hidden' : 'flex space-x-4 border-2 border-neutral-400 shadow-md rounded-full'}`}>
+              <Link href="/" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
+                Buy
+              </Link>
+              <Link href="/sell" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
+                Rent
+              </Link>
+              <Link href="/sell" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
+                Sell
+              </Link>
+              <Link href="" className="px-4 py-2 hover:bg-white hover:text-black rounded-full animate-bounce" onClick={handleLink}>
+                more
+              </Link>
+            </div>
+            <div className={`${isVisible ? 'hidden' : 'flex space-x-4 border-2 border-neutral-400 shadow-md rounded-full'}`}>
+              <Link href="/contact" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
+                Contact Us
+              </Link>
+              <Link href="/about" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
+                About
+              </Link>
+              <Link href="/team" className="px-4 py-2 hover:bg-white hover:text-black rounded-full">
+                Our Team
+              </Link>
+              <Link href="" className="px-4 py-2 hover:bg-white hover:text-black rounded-full animate-bounce" onClick={handleLink}>
+                more
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="flex font-bold text-white items-center space-x-2">
+        <div className="flex items-center justify-end space-x-2">
           {user ? (
-            <div className="grid grid-rows-1">
-              
-              <button className="row-start-1 mx-[0.75rem] hover:text-blue-500">
-              <Tooltip tooltipContent="cart">
-                <Link href="/cart"><HiOutlineShoppingCart className="w-6 h-6" /></Link>
+            <div className="flex items-center space-x-4">
+              <button className="hover:text-blue-500">
+                <Tooltip tooltipContent="cart">
+                  <Link href="/cart"><HiOutlineShoppingCart className="w-6 h-6" /></Link>
                 </Tooltip>
               </button>
-              
-              <Link href="/demandlist" className="row-start-1 mx-[0.75rem] hover:text-blue-500">
+              <Link href="/demandlist" className="hover:text-blue-500">
                 <TbNotebook className="w-6 h-6" />
               </Link>
-              <button className="row-start-1 mx-[0.75rem] hover:text-blue-500">
+              <button className="hover:text-blue-500">
                 <Link href="/dashboard"><FiUser className="w-6 h-6" /></Link>
               </button>
-              <button className="row-start-1 mx-[0.75rem] hover:text-blue-500">
+              <button className="hover:text-blue-500">
                 <Link href="/api/auth/logout"><IoIosLogOut className="w-6 h-6" /></Link>
               </button>
             </div>
           ) : (
-            <button className="mr-[4.5rem] hover:text-blue-500">
+            <button className="hover:text-blue-500">
               <Link href="/api/auth/login">Login</Link>
             </button>
           )}

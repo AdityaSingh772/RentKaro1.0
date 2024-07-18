@@ -25,7 +25,7 @@ const Pagination: React.FC<PaginationProps> = ({ postsPerPage, totalPosts, pagin
                 paginate(number);
               }} 
               href='!#' 
-              className="px-4 py-2 bg-blue-500 rounded hover:bg-black hover:text-white hover:border-2 hover:border-blue-500"
+              className="px-4 py-2 bg-blue-500 rounded hover:bg-black hover:text-white hover:border-2 hover:border-blue-500 focus:outline-none focus:ring focus:ring-blue-700"
             >
               {number}
             </a>

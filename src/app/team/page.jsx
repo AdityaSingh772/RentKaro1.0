@@ -4,23 +4,24 @@ import Image from 'next/image';
 const teamMembers = [
   {
     name: "Aditya Singh",
-    position: "Co Founder",
+    position: "Contributor",
     image: "/adi.jpg",
-    description: "Aditya is the visionary behind our company, bringing years of experience in the tech industry. His leadership and innovative mindset have been instrumental in steering the company towards new heights. Aditya's commitment to excellence and passion for technology continue to inspire the entire team.",
+    description: "Aditya has been the driving force behind our project, leading the team with his innovative ideas and dedication. His leadership skills and passion for technology have been crucial in guiding us towards our goals.",
   },
   {
     name: "Dinesh Jangid",
-    position: "Co Founder",
-    image: "",
-    description: "Dinesh is a key pillar of our organization, known for his unwavering dedication and strategic thinking. His ability to tackle challenges head-on and his deep understanding of market dynamics make him an invaluable asset to the team. Dinesh's collaborative spirit and humility set a great example for all of us.",
+    position: "Contributor",
+    image: "/dinesh.jpg",
+    description: "Dinesh has played a supportive role in our project with his strategic thinking and hard work. His ability to handle challenges and his understanding of key aspects have made him a valuable member of our team.",
   },
   {
     name: "Jeet Chandak",
-    position: "Co Founder",
+    position: "Contributor",
     image: "/jeet.jpg",
-    description: "Jeet is a cornerstone of our company, contributing his expertise and enthusiasm to every project. His commitment to fostering a positive work environment and his knack for finding innovative solutions have significantly enhanced our operations. Jeet's humble nature and willingness to support his colleagues make him a cherished member of our team.",
+    description: "Jeet has been a key contributor to our project, bringing his enthusiasm and support to the table. His positive attitude and willingness to assist have greatly benefited our team’s progress.",
   },
 ];
+
 
 
 const OurTeam = () => {
