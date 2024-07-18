@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useRef, ReactNode, CSSProperties } from 'react';
 
 interface TooltipProps {
@@ -47,7 +47,7 @@ const Tooltip: React.FC<TooltipProps> = ({ children, classname = '', tooltipCont
       {visible && (
         <div
           ref={tooltipRef}
-          className="fixed z-10 p-2 text-sm text-white bg-gray-800 rounded shadow-lg"
+          className="absolute z-50 p-2 text-sm text-white bg-gray-800 rounded shadow-lg"
           style={{ top: `${position.top}px`, left: `${position.left}px` } as CSSProperties}
         >
           {tooltipContent}

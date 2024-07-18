@@ -8,7 +8,7 @@ import { IoIosLogOut } from 'react-icons/io';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Preloader from './PreLoader';
-import Tooltip from './Tooltip';
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -82,10 +82,14 @@ const Navbar = () => {
         <div className="flex items-center justify-end space-x-2">
           {user ? (
             <div className="flex items-center space-x-4">
+              
               <button className="hover:text-blue-500">
-                <Tooltip tooltipContent="cart">
-                  <Link href="/cart"><HiOutlineShoppingCart className="w-6 h-6" /></Link>
-                </Tooltip>
+                
+                  <Link href="/cart">
+                  
+                  <HiOutlineShoppingCart className="w-6 h-6" />
+                  </Link>
+                
               </button>
               <Link href="/demandlist" className="hover:text-blue-500">
                 <TbNotebook className="w-6 h-6" />

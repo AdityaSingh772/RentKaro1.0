@@ -32,7 +32,8 @@ const RentPage: React.FC<RentPageProps> = ({ searchRes, college }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get<Product[]>(`${process.env.NEXT_PUBLIC_SERVER_API}/api/items`);
-        setData(response.data);
+        const reversedData = response.data.reverse(); 
+        setData(reversedData);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -56,7 +57,7 @@ const RentPage: React.FC<RentPageProps> = ({ searchRes, college }) => {
       };
       fetchData();
     } else {
-      setData(searchRes);
+      setData(searchRes.reverse());
       setLoading(false);
     }
   }, [searchRes]);
