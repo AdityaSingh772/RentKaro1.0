@@ -99,9 +99,9 @@ const PostAdForm: React.FC = () => {
       });
       console.log('Response:', response.data);
       alert("The ad is sent for review from the admin");
-      setTimeout(() => {
-        window.location.href = '/';
-      }, 2000);
+      // setTimeout(() => {
+      //   window.location.href = '/';
+      // }, 2000);
     } catch (error) {
       console.error('Error uploading form:', error);
       // Handle error (e.g., show an error message)

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Result from '@/components/Result';
+import Pagination from '@/components/Pagination'
 import ProductList from '@/components/ProductList';
 import axios from 'axios';
-
-import Footer from './Footer';
 
 interface Product {
   id: number;
@@ -26,6 +25,8 @@ interface RentPageProps {
 const RentPage: React.FC<RentPageProps> = ({ searchRes, college }) => {
   const [data, setData] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostPerPage] = useState(10);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -60,13 +61,30 @@ const RentPage: React.FC<RentPageProps> = ({ searchRes, college }) => {
     }
   }, [searchRes]);
 
+
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
+
   return (
     <div className="container flex flex-col overflow-hidden pt-20">
       <Result Size={data.length} college={college} />
       {loading ? (
         <div className='bg-black text-white'>Loading</div>
       ) : (
-        <ProductList Products={data} />
+        <>
+        <ProductList Products={currentPosts} />
+        <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={data.length}
+        paginate={paginate}
+      />
+        </>
+        
       )}
     </div>
   );
